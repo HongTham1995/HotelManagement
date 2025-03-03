@@ -536,7 +536,10 @@
             "Quản lý",
             "Lễ tân",
             "Kế toán",
-            "Bếp"});
+             "Phục vụ",
+            "Bếp",
+             "Bảo vệ"
+            });
             this.cbChucVu.Location = new System.Drawing.Point(0, 28);
             this.cbChucVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbChucVu.Name = "cbChucVu";

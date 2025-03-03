@@ -177,8 +177,12 @@ namespace GUI.GUI_STAFF
                     chucvu = "Lễ tân";
                 else if (cv == "2")
                     chucvu = " Kê toán";
-                else
+                else if (cv == "3")
                     chucvu = "Bếp";
+                else if (cv == "4")
+                    chucvu = "Phục vụ";
+                else 
+                    chucvu = "Bảo vệ";
 
                 var ngaysinh = DateTime.Parse(dt.Rows[i][9].ToString().Split()[0]).ToString("dd/MM/yyyy");
                 var ngayvaolam = DateTime.Parse(dt.Rows[i][10].ToString().Split()[0]).ToString("dd/MM/yyyy");
