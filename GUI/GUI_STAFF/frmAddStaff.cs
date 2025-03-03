@@ -45,9 +45,9 @@ namespace GUI.GUI_STAFF
         /// <param name="ngaysinh">Date of birth</param>
         /// <param name="ngayvaolam">Date of joining</param>
         /// <param name="email">Email address</param>
-        /// <param name="luong1ngay">Daily salary</param>
+        /// <param name="luong">Daily salary</param>
         /// <return>None</return>
-        public frmAddStaff(string manv, string tennv, int gioitinh, int songayphep, int chucvu, DateTime ngaysinh, DateTime ngayvaolam, string email, int luong1ngay)
+        public frmAddStaff(string manv, string tennv, int gioitinh, int songayphep, int chucvu, DateTime ngaysinh, DateTime ngayvaolam, string email)
         {
             this.isAdd = false;
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace GUI.GUI_STAFF
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayVaoLam.Value = ngayvaolam;
             txtEmail.Text = email;
-            txtLuong1Ngay.Text = luong1ngay.ToString();
+           
         }
 
 
@@ -178,7 +178,7 @@ namespace GUI.GUI_STAFF
         /// </summary>
         /// <param name="sender">The source of the event</param>
         /// <param name="e">A KeyPressEventArgs that contains the event data</param>
-        private void txtLuong1Ngay_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -236,22 +236,7 @@ namespace GUI.GUI_STAFF
                 xacNhan = false;
             }
 
-            if (txtLuong1Ngay.Text == "")
-            {
-                lblLuong1NgayAlert.Visible = true;
-                xacNhan = false;
-            }
-
-            if (txtSoNgayPhep.Text == "")
-            {
-                lblSoNgayPhepAlert.Visible = true;
-                xacNhan = false;
-            }
-
-            if (lblEmailAlert.Visible || lblLuong1NgayAlert.Visible || lblNgaySinhAlert.Visible || lblNgayVaoLamAlert.Visible || lblSoNgayPhepAlert.Visible || lblTenNVAlert.Visible)
-            {
-                xacNhan = false;
-            }
+           
 
             if (xacNhan)
             {
@@ -263,16 +248,19 @@ namespace GUI.GUI_STAFF
                 var ngaysinh = dtpNgaySinh.Value;
                 var ngayvaolam = dtpNgayVaoLam.Value;
                 var email = txtEmail.Text;
-                var luong1ngay = Convert.ToInt32(txtLuong1Ngay.Text);
+                var MaL= cbChucVu.SelectedIndex;
+                var MaPC= cbChucVu.SelectedIndex;
+                var MaBL= cbChucVu.SelectedIndex;
+                var MaTL= cbChucVu.SelectedIndex;
                 if (this.isAdd)
                 {
-                    nhanVienBUS.addNhanVien(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email, luong1ngay);
+                    nhanVienBUS.addNhanVien(manv, tennv,MaL,MaTL,MaPC,MaBL, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email);
                     MessageBoxDialog message = new MessageBoxDialog();
                     message.ShowDialog("Thông báo", "Thành công", "Thêm nhân viên mới thành công", MessageBoxDialog.SUCCESS, MessageBoxDialog.YES, "Đóng", "", "");
                 }
                 else
                 {
-                    nhanVienBUS.updateNhanVien(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email, luong1ngay);
+                    nhanVienBUS.updateNhanVien(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email);
                     MessageBoxDialog message = new MessageBoxDialog();
                     message.ShowDialog("Thông báo", "Thành công", "Thay đổi thành công", MessageBoxDialog.SUCCESS, MessageBoxDialog.YES, "Đóng", "", "");
                 }
@@ -356,20 +344,7 @@ namespace GUI.GUI_STAFF
         /// </summary>
         /// <param name="sender">The source of the event</param>
         /// <param name="e">An EventArgs that contains the event data</param>
-        private void txtLuong1Ngay_TextChanged(object sender, EventArgs e)
-        {
-            if (txtLuong1Ngay.Text == string.Empty)
-            {
-                lblLuong1NgayAlert.Visible = true;
-                return;
-            }
-            else lblLuong1NgayAlert.Visible = false;
-            var luong1ngay = Convert.ToInt64(txtLuong1Ngay.Text);
-            if (luong1ngay > Int32.MaxValue)
-            {
-                txtLuong1Ngay.Text = Int32.MaxValue.ToString();
-            }
-        }
+        
 
         /// <summary>
         /// Handles the TextChanged event for the txtSoNgayPhep TextBox to validate the number of leave days input
@@ -390,5 +365,7 @@ namespace GUI.GUI_STAFF
                 txtSoNgayPhep.Text = 30.ToString();
             }
         }
+
+        
     }
 }

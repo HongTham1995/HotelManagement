@@ -49,7 +49,7 @@
             this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoNgayPhep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Luong1Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
@@ -79,7 +79,7 @@
             this.dtpNgaySinhDen = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.cbLuong1Ngay = new System.Windows.Forms.ComboBox();
+            this.cbLuong = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbNgayNghiPhep = new System.Windows.Forms.ComboBox();
@@ -226,7 +226,7 @@
             this.NgayVaoLam,
             this.ChucVu,
             this.SoNgayPhep,
-            this.Luong1Ngay,
+            this.Luong,
             this.Email});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
@@ -337,14 +337,14 @@
             // 
             // Luong1Ngay
             // 
-            this.Luong1Ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Luong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Luong1Ngay.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Luong1Ngay.HeaderText = "LƯƠNG 1 NGÀY";
-            this.Luong1Ngay.MinimumWidth = 6;
-            this.Luong1Ngay.Name = "Luong1Ngay";
-            this.Luong1Ngay.ReadOnly = true;
-            this.Luong1Ngay.Width = 168;
+            this.Luong.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Luong.HeaderText = "LƯƠNG";
+            this.Luong.MinimumWidth = 6;
+            this.Luong.Name = "Luong";
+            this.Luong.ReadOnly = true;
+            this.Luong.Width = 168;
             // 
             // Email
             // 
@@ -381,7 +381,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnImport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImport.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnImport.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
@@ -403,7 +403,7 @@
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnExportToExcel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportToExcel.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnExportToExcel.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
@@ -425,7 +425,7 @@
             // 
             // buttonRounded7
             // 
-            this.buttonRounded7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonRounded7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRounded7.BackColor = System.Drawing.Color.DarkOrange;
             this.buttonRounded7.BackgroundColor = System.Drawing.Color.DarkOrange;
@@ -449,7 +449,7 @@
             // 
             // buttonRounded1
             // 
-            this.buttonRounded1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonRounded1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRounded1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.buttonRounded1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
@@ -473,7 +473,7 @@
             // 
             // buttonRounded4
             // 
-            this.buttonRounded4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.buttonRounded4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRounded4.BackColor = System.Drawing.Color.SeaGreen;
             this.buttonRounded4.BackgroundColor = System.Drawing.Color.SeaGreen;
@@ -743,7 +743,7 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.cbLuong1Ngay);
+            this.panel10.Controls.Add(this.cbLuong);
             this.panel10.Controls.Add(this.label9);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(3, 64);
@@ -754,21 +754,21 @@
             // 
             // cbLuong1Ngay
             // 
-            this.cbLuong1Ngay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbLuong1Ngay.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLuong1Ngay.FormattingEnabled = true;
-            this.cbLuong1Ngay.Items.AddRange(new object[] {
+            this.cbLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbLuong.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLuong.FormattingEnabled = true;
+            this.cbLuong.Items.AddRange(new object[] {
             "Dưới 100,000 VNĐ",
             "Từ 100,000 VNĐ đến 200,000 VNĐ",
             "Từ 200,000 VNĐ đến 500,000 VNĐ",
             "Trên 500,000 VNĐ"});
-            this.cbLuong1Ngay.Location = new System.Drawing.Point(125, 15);
-            this.cbLuong1Ngay.Name = "cbLuong1Ngay";
-            this.cbLuong1Ngay.Size = new System.Drawing.Size(106, 28);
-            this.cbLuong1Ngay.TabIndex = 0;
-            this.cbLuong1Ngay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbLuong1Ngay_KeyPress);
-            this.cbLuong1Ngay.Leave += new System.EventHandler(this.cbLuong1Ngay_Leave);
-            this.cbLuong1Ngay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbLuong1Ngay_MouseClick);
+            this.cbLuong.Location = new System.Drawing.Point(125, 15);
+            this.cbLuong.Name = "cbLuong";
+            this.cbLuong.Size = new System.Drawing.Size(106, 28);
+            this.cbLuong.TabIndex = 0;
+            this.cbLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbLuong_KeyPress);
+            this.cbLuong.Leave += new System.EventHandler(this.cbLuong_Leave);
+            this.cbLuong.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbLuong_MouseClick);
             // 
             // label9
             // 
@@ -779,7 +779,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 28);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Lương 1 ngày:  ";
+            this.label9.Text = "Lương:  ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.UseCompatibleTextRendering = true;
             // 
@@ -1150,7 +1150,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinhDen;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.ComboBox cbLuong1Ngay;
+        private System.Windows.Forms.ComboBox cbLuong;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbNgayNghiPhep;
@@ -1188,7 +1188,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayPhep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Luong1Ngay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
     }
 }

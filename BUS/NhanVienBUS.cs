@@ -29,10 +29,17 @@ namespace BUS
         /// <returns>A DataTable containing the list of active employee</returns>
         public DataTable getNhanVien()
         {
-            string query = "select * from NHANVIEN where XuLy = 0";
+            string query = @"
+        SELECT nv.MaNV, nv.TenNV, nv.MaL, nv.MaTL, nv.MaPC, 
+               bl.SoTien AS Luong, nv.GioiTinh, nv.SoNgayPhep, 
+               nv.ChucVu, nv.NgaySinh, nv.NgayVaoLam, nv.Email, nv.XuLy
+        FROM NhanVien nv
+        LEFT JOIN BANGLUONG bl ON nv.MaBL = bl.MaBL
+        WHERE nv.XuLy = 0";
             DataTable dt = db.getList(query);
             return dt;
         }
+
 
         /// <summary>
         /// Retrieves a total count of employees from the database
@@ -56,13 +63,22 @@ namespace BUS
         /// <param name="ngayvaolam">Date of joining</param>
         /// <param name="email">Email address</param>
         /// <param name="luong1ngay">Daily salary</param>
-        public void addNhanVien(string manv, string tennv, int gioitinh, int songayphep, int chucvu, DateTime ngaysinh, DateTime ngayvaolam, string email, int luong1ngay)
+        public void addNhanVien(string manv, string tennv, int maL, int maTL, int maPC, int maBL,
+                        int gioiTinh, int soNgayPhep, int chucvu,
+                        DateTime ngaysinh, DateTime ngayvaolam, string email)
         {
             var ns = ngaysinh.ToString("yyyy-MM-dd");
             var nvl = ngayvaolam.ToString("yyyy-MM-dd");
-            string query = string.Format("insert into NHANVIEN values ('{0}',N'{1}', {2}, {3}, {4}, '{5}', '{6}', '{7}', {8}, 0)", manv, tennv, gioitinh, songayphep, chucvu, ns, nvl, email, luong1ngay);
+
+            string query = string.Format(@"
+            INSERT INTO NHANVIEN (MaNV, TenNV, MaL, MaTL, MaPC, MaBL, GioiTinh, SoNgayPhep, ChucVu, NgaySinh, NgayVaoLam, Email, XuLy) 
+            VALUES ('{0}', N'{1}', {2}, {3}, {4}, {5}, {6}, {7}, {8}, '{9}', '{10}', '{11}', 0)",
+                            manv, tennv, maL, maTL, maPC, maBL, gioiTinh, soNgayPhep, chucvu, ns, nvl, email);
+
             db.ExecuteNonQuery(query);
         }
+
+
 
         /// <summary>
         /// Find employees based on the search criteria
@@ -79,82 +95,92 @@ namespace BUS
         /// <param name="ngayvaolamden">Date of joining to</param>
         /// <param name="email">Email address</param>
         /// <returns>A DataTable containing the list of employees that match the search criteria</returns>
-        public DataTable findNhanVien(string manv, string tennv, int gioitinh, int chucvu, string songayphep, string luong1ngay, DateTime ngaysinhtu, DateTime ngaysinhden, DateTime ngayvaolamtu, DateTime ngayvaolamden, string email)
+        public DataTable findNhanVien(string manv, string tennv, int gioitinh, int chucvu, string songayphep, string sotien, DateTime ngaysinhtu, DateTime ngaysinhden, DateTime ngayvaolamtu, DateTime ngayvaolamden, string email)
         {
-            var query = "select * from NHANVIEN where ";
-            if (manv != String.Empty)
+            var query = @"SELECT NV.* FROM NHANVIEN NV 
+                  JOIN BANGLUONG BL ON NV.MaBL = BL.MaBL 
+                  WHERE ";
+
+            if (!string.IsNullOrEmpty(manv))
             {
-                query += "maNV like '%" + manv + "%' and ";
+                query += "NV.MaNV LIKE '%" + manv + "%' AND ";
             }
-            if (tennv != String.Empty)
+            if (!string.IsNullOrEmpty(tennv))
             {
-                query += "tenNV like N'%" + tennv + "%' and ";
+                query += "NV.TenNV LIKE N'%" + tennv + "%' AND ";
             }
             if (gioitinh != -1)
             {
-                query += "gioiTinh = " + gioitinh + " and ";
+                query += "NV.GioiTinh = " + gioitinh + " AND ";
             }
-            if (chucvu != -1)//*****
+            if (chucvu != -1)
             {
-                query += "chucVu = " + chucvu + " and ";
+                query += "NV.ChucVu = " + chucvu + " AND ";
             }
-            if (songayphep != String.Empty)
+            if (!string.IsNullOrEmpty(songayphep))
             {
-                String temp = "";
-                if (songayphep.Substring(0, 4).ToUpper().Equals("DƯỚI"))
+                string temp = "";
+                if (songayphep.ToUpper().StartsWith("DƯỚI"))
                 {
-                    temp = "soNgayPhep < " + songayphep.Split(' ')[1] + " and ";
+                    temp = "NV.SoNgayPhep < " + songayphep.Split(' ')[1] + " AND ";
                 }
-                else if (songayphep.Substring(0, 4).ToUpper().Equals("TRÊN"))
+                else if (songayphep.ToUpper().StartsWith("TRÊN"))
                 {
-                    temp = "soNgayPhep > " + songayphep.Split(' ')[1] + " and ";
+                    temp = "NV.SoNgayPhep > " + songayphep.Split(' ')[1] + " AND ";
                 }
-                else if (songayphep.Substring(0, 2).ToUpper().Equals("TỪ"))
+                else if (songayphep.ToUpper().StartsWith("TỪ"))
                 {
-                    temp = "soNgayPhep >= " + songayphep.Split(' ')[1] + " and " + "soNgayPhep <= " + songayphep.Split(' ')[4] + " and ";
+                    temp = "NV.SoNgayPhep BETWEEN " + songayphep.Split(' ')[1] + " AND " + songayphep.Split(' ')[4] + " AND ";
                 }
                 query += temp;
             }
             if (ngaysinhtu != DateTime.MinValue)
             {
-                query += "ngaySinh >= '" + ngaysinhtu.ToString("yyyy-MM-dd") + "' and ";
+                query += "NV.NgaySinh >= '" + ngaysinhtu.ToString("yyyy-MM-dd") + "' AND ";
             }
             if (ngaysinhden != DateTime.MinValue)
             {
-                query += "ngaySinh <= '" + ngaysinhden.ToString("yyyy-MM-dd") + "' and  ";
+                query += "NV.NgaySinh <= '" + ngaysinhden.ToString("yyyy-MM-dd") + "' AND ";
             }
             if (ngayvaolamtu != DateTime.MinValue)
             {
-                query += "ngayVaoLam >= '" + ngayvaolamtu.ToString("yyyy-MM-dd") + "' and ";
+                query += "NV.NgayVaoLam >= '" + ngayvaolamtu.ToString("yyyy-MM-dd") + "' AND ";
             }
             if (ngayvaolamden != DateTime.MinValue)
             {
-                query += "ngayVaoLam <= '" + ngayvaolamden.ToString("yyyy-MM-dd") + "'  and ";
+                query += "NV.NgayVaoLam <= '" + ngayvaolamden.ToString("yyyy-MM-dd") + "' AND ";
             }
-            if (luong1ngay != String.Empty)
+            if (!string.IsNullOrEmpty(sotien))
             {
-                String temp = "";
-                if (luong1ngay.Substring(0, 4).ToUpper().Equals("DƯỚI"))
+                string temp = "";
+                if (sotien.ToUpper().StartsWith("DƯỚI"))
                 {
-                    temp = "luong1Ngay < " + luong1ngay.Split(' ')[1].Replace(",", "") + " and ";
+                    temp = "BL.SoTien < " + sotien.Split(' ')[1].Replace(",", "") + " AND ";
                 }
-                else if (luong1ngay.Substring(0, 4).ToUpper().Equals("TRÊN"))
+                else if (sotien.ToUpper().StartsWith("TRÊN"))
                 {
-                    temp = "luong1Ngay > " + luong1ngay.Split(' ')[1].Replace(",", "") + " and ";
+                    temp = "BL.SoTien > " + sotien.Split(' ')[1].Replace(",", "") + " AND ";
                 }
-                else if (luong1ngay.Substring(0, 2).ToUpper().Equals("TỪ"))
+                else if (sotien.ToUpper().StartsWith("TỪ"))
                 {
-                    temp = "luong1Ngay >= " + luong1ngay.Split(' ')[1].Replace(",", "") + " and " + "luong1Ngay <= " + luong1ngay.Split(' ')[4].Replace(",", "") + " and ";
+                    temp = "BL.SoTien BETWEEN " + sotien.Split(' ')[1].Replace(",", "") + " AND " + sotien.Split(' ')[4].Replace(",", "") + " AND ";
                 }
                 query += temp;
             }
-            if (email != String.Empty)
+            if (!string.IsNullOrEmpty(email))
             {
-                query += "email like '%" + email + "%' and ";
+                query += "NV.Email LIKE '%" + email + "%' AND ";
             }
-            query += "xuLy = 0";
+
+            // Xóa "AND " cuối cùng nếu có
+            if (query.Trim().EndsWith("AND"))
+            {
+                query = query.Substring(0, query.Length - 4);
+            }
+
             return db.getList(query);
         }
+
 
         /// <summary>
         /// Marks an employee as deleted in the database by setting the xuly = 1
@@ -178,18 +204,39 @@ namespace BUS
         /// <param name="ngayvaolam">Date of joining</param>
         /// <param name="email">Email address</param>
         /// <param name="luong1ngay">Daily salary</param>
-        public void updateNhanVien(string manv, string tennv, int gioitinh, int songayphep, int chucvu, DateTime ngaysinh, DateTime ngayvaolam, string email, int luong1ngay)
+        public void updateNhanVien(string manv, string tennv, int gioitinh, int songayphep, int chucvu, DateTime ngaysinh, DateTime ngayvaolam, string email)
         {
             var ns = ngaysinh.Year + "-" + ngaysinh.Month + "-" + ngaysinh.Day;
             var nvl = ngayvaolam.Year + "-" + ngayvaolam.Month + "-" + ngayvaolam.Day;
-            string query = string.Format("update NHANVIEN set maNV = '{0}', tenNV = N'{1}', gioiTinh = {2}, soNgayPhep = {3}, chucVu = {4}, ngaySinh = '{5}', ngayVaoLam = '{6}', email = '{7}', luong1Ngay = {8} where maNV = '{9}'", manv, tennv, gioitinh, songayphep, chucvu, ns, nvl, email, luong1ngay, manv);
+            string query = string.Format(@"UPDATE NHANVIEN 
+                                   SET TenNV = N'{1}', 
+                                       MaL = {2}, 
+                                       MaTL = {3}, 
+                                       MaPC = {4}, 
+                                       MaBL = {5}, 
+                                       GioiTinh = {6}, 
+                                       SoNgayPhep = {7}, 
+                                       ChucVu = {8}, 
+                                       NgaySinh = '{9}', 
+                                       NgayVaoLam = '{10}', 
+                                       Email = '{11}', 
+                                       XuLy = 0
+                                   WHERE MaNV = '{0}'",
+        manv, tennv,chucvu, chucvu, chucvu, chucvu, gioitinh, songayphep, chucvu, ns, nvl, email); 
             db.ExecuteNonQuery(query);
         }
         #region new
         public List<NhanVienDTO> getDSNhanVien()
         {
-            string query = "select * from NhanVien where xuLy = 0";
-            return db.getListNV_DTO(query);   
+            string query = @"
+        SELECT nv.MaNV, nv.TenNV, nv.MaL, nv.MaTL, nv.MaPC, 
+               bl.SoTien AS Luong, nv.GioiTinh, nv.SoNgayPhep, 
+               nv.ChucVu, nv.NgaySinh, nv.NgayVaoLam, nv.Email, nv.XuLy
+        FROM NhanVien nv
+        LEFT JOIN BANGLUONG bl ON nv.MaBL = bl.MaBL
+        WHERE nv.XuLy = 0";  // ✅ Chỉ lấy nhân viên chưa bị xóa
+
+            return db.getListNV_DTO(query);
         }
         public List<NhanVienDTO> getAllDSNhanVien()
         {

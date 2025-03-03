@@ -36,7 +36,7 @@ namespace GUI.GUI_STAFF
             cbGioiTinh.TextChanged += OtherFields_TextChanged;
             cbChucVu.TextChanged += OtherFields_TextChanged;
             cbNgayNghiPhep.TextChanged += OtherFields_TextChanged;
-            cbLuong1Ngay.TextChanged += OtherFields_TextChanged;
+            cbLuong.TextChanged += OtherFields_TextChanged;
             dtpNgaySinhTu.ValueChanged += OtherFields_TextChanged;
             dtpNgaySinhDen.ValueChanged += OtherFields_TextChanged;
             dtpNgayVaoLamTu.ValueChanged += OtherFields_TextChanged;
@@ -70,7 +70,7 @@ namespace GUI.GUI_STAFF
                 string.IsNullOrEmpty(cbChucVu.Text) &&
                 string.IsNullOrEmpty(txtEmail.Text) &&
                 string.IsNullOrEmpty(cbNgayNghiPhep.Text) &&
-                string.IsNullOrEmpty(cbLuong1Ngay.Text) &&
+                string.IsNullOrEmpty(cbLuong.Text) &&
                 dtpNgaySinhTu.Text == " " &&
                 dtpNgaySinhDen.Text == " " &&
                 dtpNgayVaoLamTu.Text == " " &&
@@ -95,7 +95,7 @@ namespace GUI.GUI_STAFF
                 string.IsNullOrEmpty(cbChucVu.Text) &&
                 string.IsNullOrEmpty(txtEmail.Text) &&
                 string.IsNullOrEmpty(cbNgayNghiPhep.Text) &&
-                string.IsNullOrEmpty(cbLuong1Ngay.Text) &&
+                string.IsNullOrEmpty(cbLuong.Text) &&
                 dtpNgaySinhTu.Text == " " &&
                 dtpNgaySinhDen.Text == " " &&
                 dtpNgayVaoLamTu.Text == " " &&
@@ -119,7 +119,7 @@ namespace GUI.GUI_STAFF
             txtTenNV.Enabled = enabled;
             cbGioiTinh.Enabled = enabled;
             cbChucVu.Enabled = enabled;
-            cbLuong1Ngay.Enabled = enabled;
+            cbLuong.Enabled = enabled;
             cbNgayNghiPhep.Enabled = enabled;
             dtpNgaySinhTu.Enabled = enabled;
             dtpNgaySinhDen.Enabled = enabled;
@@ -162,15 +162,15 @@ namespace GUI.GUI_STAFF
             {
                 var manv = dt.Rows[i][0].ToString();
                 var tennv = dt.Rows[i][1].ToString();
-                var gt = dt.Rows[i][2].ToString();
+                var gt = dt.Rows[i][6].ToString();
                 string gioitinh;
                 if (gt == "0")
                     gioitinh = "Nam";
                 else
                     gioitinh = "Nu";
-                var songayphep = dt.Rows[i][3].ToString();
+                var songayphep = dt.Rows[i][7].ToString();
                 string chucvu;
-                var cv = dt.Rows[i][4].ToString();
+                var cv = dt.Rows[i][8].ToString();
                 if (cv == "0")
                     chucvu = "Quản lý";
                 else if (cv == "1")
@@ -180,11 +180,11 @@ namespace GUI.GUI_STAFF
                 else
                     chucvu = "Bếp";
 
-                var ngaysinh = DateTime.Parse(dt.Rows[i][5].ToString().Split()[0]).ToString("dd/MM/yyyy");
-                var ngayvaolam = DateTime.Parse(dt.Rows[i][6].ToString().Split()[0]).ToString("dd/MM/yyyy");
-                var email = dt.Rows[i][7].ToString();
-                var luong1ngay = dt.Rows[i][8].ToString();
-                dataNhanVien.Rows.Add(stt, manv, tennv, gioitinh, ngaysinh, ngayvaolam, chucvu, songayphep, luong1ngay, email);
+                var ngaysinh = DateTime.Parse(dt.Rows[i][9].ToString().Split()[0]).ToString("dd/MM/yyyy");
+                var ngayvaolam = DateTime.Parse(dt.Rows[i][10].ToString().Split()[0]).ToString("dd/MM/yyyy");
+                var email = dt.Rows[i][11].ToString();
+                var luong = dt.Rows[i][5].ToString();
+                dataNhanVien.Rows.Add(stt, manv, tennv, gioitinh, ngaysinh, ngayvaolam, chucvu, songayphep, luong, email);
                 stt++;//*****
             }
             dataNhanVien.ClearSelection();
@@ -202,15 +202,15 @@ namespace GUI.GUI_STAFF
             {
                 var manv = dt.Rows[i][0].ToString();
                 var tennv = dt.Rows[i][1].ToString();
-                var gt = dt.Rows[i][2].ToString();
+                var gt = dt.Rows[i][6].ToString();
                 string gioitinh;
                 if (gt == "0")
                     gioitinh = "Nam";
                 else
                     gioitinh = "Nu";
-                var songayphep = dt.Rows[i][3].ToString();
+                var songayphep = dt.Rows[i][7].ToString();
                 string chucvu;
-                var cv = dt.Rows[i][4].ToString();
+                var cv = dt.Rows[i][8].ToString();
                 if (cv == "0")
                     chucvu = "Quản lý";
                 else if (cv == "1")
@@ -219,11 +219,11 @@ namespace GUI.GUI_STAFF
                     chucvu = " Kê toán";
                 else
                     chucvu = "Bếp";
-                var ngaysinh = DateTime.Parse(dt.Rows[i][5].ToString().Split()[0]).ToString("dd/MM/yyyy");
-                var ngayvaolam = DateTime.Parse(dt.Rows[i][6].ToString().Split()[0]).ToString("dd/MM/yyyy");
-                var email = dt.Rows[i][7].ToString();
-                var luong1ngay = dt.Rows[i][8].ToString();
-                dataNhanVien.Rows.Add(stt, manv, tennv, gioitinh, ngaysinh, ngayvaolam, chucvu, songayphep, luong1ngay, email);
+                var ngaysinh = DateTime.Parse(dt.Rows[i][9].ToString().Split()[0]).ToString("dd/MM/yyyy");
+                var ngayvaolam = DateTime.Parse(dt.Rows[i][10].ToString().Split()[0]).ToString("dd/MM/yyyy");
+                var email = dt.Rows[i][11].ToString();
+                var luong = dt.Rows[i][5].ToString();
+                dataNhanVien.Rows.Add(stt, manv, tennv, gioitinh, ngaysinh, ngayvaolam, chucvu, songayphep, luong, email);
                 stt++;//*****
             }
             dataNhanVien.ClearSelection();
@@ -273,13 +273,13 @@ namespace GUI.GUI_STAFF
             var gioitinh = cbGioiTinh.SelectedIndex;
             var chucvu = cbChucVu.SelectedIndex;
             var songayphep = cbNgayNghiPhep.Text;
-            var luong1ngay = cbLuong1Ngay.Text;
+            var luong= cbLuong.Text;
             var ngaysinhtu = (dtpNgaySinhTu.CustomFormat.ToString().Length == 1) ? DateTime.MinValue : dtpNgaySinhTu.Value;
             var ngaysinhden = (dtpNgaySinhDen.CustomFormat.ToString().Length == 1) ? DateTime.MinValue : dtpNgaySinhDen.Value;
             var ngayvaolamtu = (dtpNgayVaoLamTu.CustomFormat.ToString().Length == 1) ? DateTime.MinValue : dtpNgayVaoLamTu.Value;
             var ngayvaolamden = (dtpNgayVaoLamDen.CustomFormat.ToString().Length == 1) ? DateTime.MinValue : dtpNgayVaoLamDen.Value;
             var email = txtEmail.Text;
-            var dt = nhanVienBUS.findNhanVien(manv, tennv, gioitinh, chucvu, songayphep, luong1ngay, ngaysinhtu, ngaysinhden, ngayvaolamtu, ngayvaolamden, email);
+            var dt = nhanVienBUS.findNhanVien(manv, tennv, gioitinh, chucvu, songayphep, luong, ngaysinhtu, ngaysinhden, ngayvaolamtu, ngayvaolamden, email);
             onLoad(dt);
         }
 
@@ -325,9 +325,9 @@ namespace GUI.GUI_STAFF
             cbNgayNghiPhep.SelectedItem = null;
             cbNgayNghiPhep.SelectedIndex = -1;
             cbNgayNghiPhep.Text = String.Empty;
-            cbLuong1Ngay.SelectedItem = null;
-            cbLuong1Ngay.SelectedIndex = -1;
-            cbLuong1Ngay.Text = String.Empty;
+            cbLuong.SelectedItem = null;
+            cbLuong.SelectedIndex = -1;
+            cbLuong.Text = String.Empty;
             dtpNgaySinhTu.Value = DateTime.Now;
             dtpNgaySinhDen.Value = DateTime.Now;
             dtpNgayVaoLamTu.Value = DateTime.Now;
@@ -438,8 +438,8 @@ namespace GUI.GUI_STAFF
             var ngaysinh = DateTime.ParseExact(nhanvien["NgaySinh"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             var ngayvaolam = DateTime.ParseExact(nhanvien["NgayVaoLam"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             var email = nhanvien["Email"].Value.ToString();
-            var luong1ngay = Convert.ToInt32(nhanvien["Luong1Ngay"].Value.ToString());
-            var addStaff = new frmAddStaff(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email, luong1ngay);
+            var luong= Convert.ToInt32(nhanvien["Luong"].Value.ToString());
+            var addStaff = new frmAddStaff(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email);
             var result = addStaff.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -482,8 +482,8 @@ namespace GUI.GUI_STAFF
             var ngaysinh = DateTime.ParseExact(nhanvien["NgaySinh"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             var ngayvaolam = DateTime.ParseExact(nhanvien["NgayVaoLam"].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             var email = nhanvien["Email"].Value.ToString();
-            var luong1ngay = Convert.ToInt32(nhanvien["Luong1Ngay"].Value.ToString());
-            var addStaff = new frmAddStaff(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email, luong1ngay);
+            var luong = Convert.ToInt32(nhanvien["Luong"].Value.ToString());
+            var addStaff = new frmAddStaff(manv, tennv, gioitinh, songayphep, chucvu, ngaysinh, ngayvaolam, email);
             var result = addStaff.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -645,25 +645,25 @@ namespace GUI.GUI_STAFF
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A KeyPressEventArgs that contains the event data.</param>
-        private void cbLuong1Ngay_KeyPress(object sender, KeyPressEventArgs e)
+        private void cbLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cbLuong1Ngay.Text == String.Empty)
+            if (cbLuong.Text == String.Empty)
             {
                 e.Handled = true;
                 return;
             }
 
             bool isSelectMany = false;
-            if (cbLuong1Ngay.SelectionLength > 0)
+            if (cbLuong.SelectionLength > 0)
             {
                 isSelectMany = true;
             }
 
             if (isSelectMany)
             {
-                var selectedText = cbLuong1Ngay.SelectedText;
-                var selectStart = cbLuong1Ngay.SelectionStart;
-                var count = cbLuong1Ngay.SelectionLength;
+                var selectedText = cbLuong.SelectedText;
+                var selectStart = cbLuong.SelectionStart;
+                var count = cbLuong.SelectionLength;
 
                 if (int.TryParse(selectedText, out var _))
                 {
@@ -674,22 +674,22 @@ namespace GUI.GUI_STAFF
                     }
                     else if (e.KeyChar == (char)Keys.Back)
                     {
-                        if (selectStart == 0 || selectStart + count >= cbLuong1Ngay.Text.Length)
+                        if (selectStart == 0 || selectStart + count >= cbLuong.Text.Length)
                         {
                             e.Handled = true;
                             return;
                         }
-                        if (int.TryParse(cbLuong1Ngay.Text[selectStart - 1].ToString(), out var _) || int.TryParse(cbLuong1Ngay.Text[selectStart + count].ToString(), out var _))
+                        if (int.TryParse(cbLuong.Text[selectStart - 1].ToString(), out var _) || int.TryParse(cbLuong.Text[selectStart + count].ToString(), out var _))
                         {
                             e.Handled = false;
                             return;
                         }
-                        else if (cbLuong1Ngay.Text[selectStart - 1] == ' ' && cbLuong1Ngay.Text[selectStart + count] == ' ')
+                        else if (cbLuong.Text[selectStart - 1] == ' ' && cbLuong.Text[selectStart + count] == ' ')
                         {
                             e.Handled = true;
-                            cbLuong1Ngay.Text = cbLuong1Ngay.Text.Remove(selectStart, count);
-                            cbLuong1Ngay.Text = cbLuong1Ngay.Text.Insert(selectStart, "0");
-                            cbLuong1Ngay.SelectionStart = selectStart;
+                            cbLuong.Text = cbLuong.Text.Remove(selectStart, count);
+                            cbLuong.Text = cbLuong.Text.Insert(selectStart, "0");
+                            cbLuong.SelectionStart = selectStart;
                         }
                         else
                         {
@@ -711,7 +711,7 @@ namespace GUI.GUI_STAFF
             }
             else
             {
-                var cursorPos = cbLuong1Ngay.SelectionStart;
+                var cursorPos = cbLuong.SelectionStart;
                 if (char.IsDigit(e.KeyChar))
                 {
                     if (cursorPos == 0)
@@ -719,7 +719,7 @@ namespace GUI.GUI_STAFF
                         e.Handled = true;
                         return;
                     }
-                    if (int.TryParse(cbLuong1Ngay.Text[cursorPos - 1].ToString(), out var _) || int.TryParse(cbLuong1Ngay.Text[cursorPos].ToString(), out var _))
+                    if (int.TryParse(cbLuong.Text[cursorPos - 1].ToString(), out var _) || int.TryParse(cbLuong.Text[cursorPos].ToString(), out var _))
                     {
                         e.Handled = false;
                         return;
@@ -737,22 +737,22 @@ namespace GUI.GUI_STAFF
                         e.Handled = true;
                         return;
                     }
-                    if (int.TryParse(cbLuong1Ngay.Text[cursorPos - 1].ToString(), out var _) && int.TryParse(cbLuong1Ngay.Text[cursorPos - 2].ToString(), out var _))
+                    if (int.TryParse(cbLuong.Text[cursorPos - 1].ToString(), out var _) && int.TryParse(cbLuong.Text[cursorPos - 2].ToString(), out var _))
                     {
                         e.Handled = false;
                         return;
                     }
-                    else if (int.TryParse(cbLuong1Ngay.Text[cursorPos - 1].ToString(), out var _) && int.TryParse(cbLuong1Ngay.Text[cursorPos].ToString(), out var _))
+                    else if (int.TryParse(cbLuong.Text[cursorPos - 1].ToString(), out var _) && int.TryParse(cbLuong.Text[cursorPos].ToString(), out var _))
                     {
                         e.Handled = false;
                         return;
                     }
-                    else if (int.TryParse(cbLuong1Ngay.Text[cursorPos - 1].ToString(), out var _) && !int.TryParse(cbLuong1Ngay.Text[cursorPos].ToString(), out var _))
+                    else if (int.TryParse(cbLuong.Text[cursorPos - 1].ToString(), out var _) && !int.TryParse(cbLuong.Text[cursorPos].ToString(), out var _))
                     {
                         e.Handled = true;
-                        cbLuong1Ngay.Text = cbLuong1Ngay.Text.Remove(cursorPos - 1, 1);
-                        cbLuong1Ngay.Text = cbLuong1Ngay.Text.Insert(cursorPos - 1, "0");
-                        cbLuong1Ngay.SelectionStart = cursorPos;
+                        cbLuong.Text = cbLuong.Text.Remove(cursorPos - 1, 1);
+                        cbLuong.Text = cbLuong.Text.Insert(cursorPos - 1, "0");
+                        cbLuong.SelectionStart = cursorPos;
                     }
                     else
                     {
@@ -773,11 +773,11 @@ namespace GUI.GUI_STAFF
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">A MouseEventArgs that contains the event data.</param>
-        private void cbLuong1Ngay_MouseClick(object sender, MouseEventArgs e)
+        private void cbLuong_MouseClick(object sender, MouseEventArgs e)
         {
-            if (cbLuong1Ngay.SelectionLength == 0)
+            if (cbLuong.SelectionLength == 0)
             {
-                cbLuong1Ngay.Text = cbLuong1Ngay.Text.Replace(",", "");
+                cbLuong.Text = cbLuong.Text.Replace(",", "");
             }
         }
 
@@ -786,9 +786,9 @@ namespace GUI.GUI_STAFF
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">An EventArgs that contains the event data.</param>
-        private void cbLuong1Ngay_Leave(object sender, EventArgs e)
+        private void cbLuong_Leave(object sender, EventArgs e)
         {
-            var arr = cbLuong1Ngay.Text.Split(' ');
+            var arr = cbLuong.Text.Split(' ');
             for (int i = 0; i < arr.Length; i++)
             {
                 if (int.TryParse(arr[i], out var _))
@@ -804,12 +804,12 @@ namespace GUI.GUI_STAFF
                     }
                 }
             }
-            cbLuong1Ngay.Text = String.Empty;
+            cbLuong.Text = String.Empty;
             for (int i = 0; i < arr.Length; i++)
             {
-                cbLuong1Ngay.Text += arr[i] + " ";
+                cbLuong.Text += arr[i] + " ";
             }
-            cbLuong1Ngay.Text.Remove(cbLuong1Ngay.Text.Length - 1);
+            cbLuong.Text.Remove(cbLuong.Text.Length - 1);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -1105,15 +1105,8 @@ namespace GUI.GUI_STAFF
                 return;
             }
 
-            int l1n = Convert.ToInt32(usedRange.Cells[row, 9].Value2.ToString().Trim());
-            if (l1n > Int32.MaxValue)
-            {
-                var message = new MessageBoxDialog();
-                var result = message.ShowDialog("Thông báo", "Lỗi định dạng", "Thay đổi thông  tin nhân viên thất bại, lương 1 ngày không được quá " + Int32.MaxValue, MessageBoxDialog.ERROR, MessageBoxDialog.YES, "Bỏ qua", "", "");
-                return;
-            }
 
-            var email = usedRange.Cells[row, 10].Value2.ToString().Trim();
+            var email = usedRange.Cells[row, 9].Value2.ToString().Trim();
             string pattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$";
             Regex regex = new Regex(pattern);
             if (!regex.IsMatch(email))
@@ -1122,7 +1115,7 @@ namespace GUI.GUI_STAFF
                 var result = message.ShowDialog("Thông báo", "Lỗi định dạng", "Thay đổi thông  tin nhân viên thất bại, email không đúng định dạng", MessageBoxDialog.ERROR, MessageBoxDialog.YES, "Bỏ qua", "", "");
                 return;
             }
-            nhanVienBUS.updateNhanVien(manv, tennv, gt, snp, cv, ns, nvl, email, l1n);
+            nhanVienBUS.updateNhanVien(manv, tennv, gt, snp, cv, ns, nvl, email);
             refresh();
         }
 
@@ -1204,21 +1197,38 @@ namespace GUI.GUI_STAFF
 
             var strcv = usedRange.Cells[row, 7].Value2.ToString().Trim();
             int cv;
+            int MaL, MaTL, MaPC, MaBL;
             if (string.Equals(strcv, "quản lý", StringComparison.OrdinalIgnoreCase))
             {
                 cv = 0;
+                MaL = 0;
+                MaTL = 0;
+                MaPC = 0;
+                MaBL = 0;
             }
             else if (string.Equals(strcv, "lễ tân", StringComparison.OrdinalIgnoreCase))
             {
                 cv = 1;
+                MaL = 1;
+                MaTL = 1;
+                MaPC = 1;
+                MaBL = 1;
             }
             else if (string.Equals(strcv, "kế toán", StringComparison.OrdinalIgnoreCase))
             {
                 cv = 2;
+                MaL = 2;
+                MaTL = 2;
+                MaPC = 2;
+                MaBL = 2;
             }
             else if (string.Equals(strcv, "bếp", StringComparison.OrdinalIgnoreCase))
             {
                 cv = 3;
+                MaL = 3;
+                MaTL = 3;
+                MaPC = 3;
+                MaBL = 3;
             }
             else
             {
@@ -1254,7 +1264,7 @@ namespace GUI.GUI_STAFF
             }
 
             var manv = getMaNV(gt, nvl);
-            nhanVienBUS.addNhanVien(manv, tennv, gt, snp, cv, ns, nvl, email, l1n);
+            nhanVienBUS.addNhanVien(manv, tennv,MaL,MaTL,MaPC,MaBL, gt, snp, cv, ns, nvl, email);
             refresh();
         }
 
