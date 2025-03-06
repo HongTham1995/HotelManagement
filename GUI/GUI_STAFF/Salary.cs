@@ -16,5 +16,10 @@ namespace GUI.GUI_STAFF
         {
             InitializeComponent();
         }
+
+        private void Salary_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
