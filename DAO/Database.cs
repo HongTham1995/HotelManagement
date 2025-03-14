@@ -14,13 +14,15 @@ namespace DAO
         SqlConnection conn;
         SqlDataAdapter da;
         DataSet ds;
-        public string serverName = @"nhom-8.database.windows.net";
-        public string dbName = "QLKS";
-        public string userName = "Nhom8";
-        public string password = "Gohomeafter10pm";
+        public string serverName = "ASUS\\SQLEXPRESS";
+        public string dbName = "QLKS_DN";
+        public string userName = "sa";
+        public string password = "123456";
         public Database()
         {
-            string stringConnect = "Server=" + serverName + "; Database=" + dbName + "; User Id=" + userName + "; Password=" + password + ";"; 
+            // Chuỗi kết nối SQL Server Local với thông tin đã cung cấp
+            string stringConnect = $"Server={serverName}; Database={dbName}; User Id={userName}; Password={password}; TrustServerCertificate=True;";
+
             conn = new SqlConnection(stringConnect);
         }
 
@@ -99,24 +101,31 @@ namespace DAO
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
+
             while (reader.Read())
             {
                 NhanVienDTO nv = new NhanVienDTO();
                 nv.MaNV = reader[0].ToString();
                 nv.TenNV = reader[1].ToString();
-                nv.GioiTinh = int.Parse(reader[2].ToString());
-                nv.SoNgayPhep = int.Parse(reader[3].ToString());
-                nv.ChucVu = int.Parse(reader[4].ToString());
-                nv.NgaySinh = DateTime.Parse(reader[5].ToString());
-                nv.NgayVaoLam = DateTime.Parse(reader[6].ToString());
-                nv.Email = reader[7].ToString();
-                nv.Luong1Ngay = int.Parse(reader[8].ToString());
-                nv.XuLy = int.Parse(reader[9].ToString());
+                nv.MaL = int.Parse(reader[2].ToString());
+                nv.MaTL = int.Parse(reader[3].ToString());
+                nv.MaPC = int.Parse(reader[4].ToString());
+                nv.Luong = float.Parse(reader[5].ToString());
+                nv.GioiTinh = int.Parse(reader[6].ToString());
+                nv.SoNgayPhep = int.Parse(reader[7].ToString());
+                nv.ChucVu = int.Parse(reader[8].ToString());
+                nv.NgaySinh = DateTime.Parse(reader[9].ToString());
+                nv.NgayVaoLam = DateTime.Parse(reader[10].ToString());
+                nv.Email = reader[11].ToString();
+                nv.XuLy = int.Parse(reader[12].ToString());
+
                 list.Add(nv);
             }
+
             conn.Close();
             return list;
         }
+
         public List<KhachHangDTO> getListKH_DTO(string query)
         {
             List<KhachHangDTO> list = new List<KhachHangDTO>();
@@ -131,7 +140,7 @@ namespace DAO
                 kh.CMND = reader[2].ToString();
                 kh.GioiTinh = int.Parse(reader[3].ToString());
                 kh.SDT = reader[4].ToString();
-                kh.QueQuan = reader[5].ToString(); 
+                kh.QueQuan = reader[5].ToString();
                 kh.QuocTich = reader[6].ToString();
                 kh.NgaySinh = DateTime.Parse(reader[7].ToString());
                 kh.XuLy = int.Parse(reader[8].ToString());
@@ -190,16 +199,19 @@ namespace DAO
                 cttp.MaCTT = reader[0].ToString();
                 cttp.MaP = reader[1].ToString();
                 cttp.NgayThue = DateTime.Parse(reader[2].ToString());
-                if (!reader.IsDBNull(3)) {
+                if (!reader.IsDBNull(3))
+                {
                     cttp.NgayTra = DateTime.Parse(reader[3].ToString());
-                } else
+                }
+                else
                 {
                     cttp.NgayTra = null;
                 }
                 if (!reader.IsDBNull(4))
                 {
                     cttp.NgayCheckOut = DateTime.Parse(reader[4].ToString());
-                } else
+                }
+                else
                 {
                     cttp.NgayCheckOut = null;
                 }
@@ -234,14 +246,15 @@ namespace DAO
             conn.Open();
             SqlCommand cmd = new SqlCommand(query, conn);
             SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
                 TaiKhoanDTO tk = new TaiKhoanDTO();
                 tk.TaiKhoan = reader[0].ToString();
                 if (reader[1] != null)
                 {
                     tk.MaNV = reader[1].ToString();
-                } else
+                }
+                else
                 {
                     tk.MaNV = "";
                 }
@@ -257,7 +270,7 @@ namespace DAO
                 tk.TinhTrang = int.Parse(reader[3].ToString());
                 tk.XuLy = int.Parse(reader[5].ToString());
                 list.Add(tk);
-            } 
+            }
             conn.Close();
             return list;
         }

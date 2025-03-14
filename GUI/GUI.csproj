@@ -653,6 +653,9 @@
     <EmbeddedResource Include="GUI_STAFF\frmAddStaff.resx">
       <DependentUpon>frmAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_STAFF\Salary.resx">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -692,6 +695,7 @@
     <Content Include="GUI_ASSETS\background.gif" />
     <Content Include="icon.ico" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <None Include="Resources\excel %281%29.png" />
     <None Include="GUI_ASSETS\QRCode.jpg" />
     <None Include="GUI_ASSETS\plus.png" />
     <None Include="GUI_ASSETS\icons8-avatar-48.png" />
