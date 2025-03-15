@@ -102,5 +102,10 @@ namespace GUI.GUI_STAFF
         {
 
         }
+
+        private void btnNghiPhep_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
