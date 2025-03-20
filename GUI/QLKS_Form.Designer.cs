@@ -70,6 +70,8 @@
             this.pnTimekeeping = new System.Windows.Forms.Panel();
             this.btnTimekeeping = new GUI.GUI_COMPONENT.ButtonRounded();
             this.pnSalary = new System.Windows.Forms.Panel();
+            this.pningr_salary = new System.Windows.Forms.Panel();
+            this.btningr_salary = new GUI.GUI_COMPONENT.ButtonRounded();
             this.btnSalary = new GUI.GUI_COMPONENT.ButtonRounded();
             this.pnHRM = new System.Windows.Forms.Panel();
             this.pnTop.SuspendLayout();
@@ -93,6 +95,7 @@
             this.pn_Staff.SuspendLayout();
             this.pnTimekeeping.SuspendLayout();
             this.pnSalary.SuspendLayout();
+            this.pningr_salary.SuspendLayout();
             this.pnHRM.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -351,21 +354,13 @@
             this.pnHRM.Controls.Add(this.pn_Staff);
             this.pnHRM.Controls.Add(this.pnTimekeeping);
             this.pnHRM.Controls.Add(this.pnSalary);
+            this.pnHRM.Controls.Add(this.pningr_salary);
             this.pnHRM.Location = new System.Drawing.Point(6, 162);
             this.pnHRM.Margin = new System.Windows.Forms.Padding(0);
             this.pnHRM.Name = "pnHRM";
             this.pnHRM.Size = new System.Drawing.Size(228, 39);
             this.pnHRM.TabIndex = 4;
 
-            // 
-            // pnHRM_Menu
-            // 
-            this.pnHRM_Menu.Controls.Add(this.btnHRM);
-            this.pnHRM_Menu.Location = new System.Drawing.Point(0, 0);
-            this.pnHRM_Menu.Margin = new System.Windows.Forms.Padding(0);
-            this.pnHRM_Menu.Name = "pnHRM_Menu";
-            this.pnHRM_Menu.Size = new System.Drawing.Size(228, 39);
-            this.pnHRM_Menu.TabIndex = 0;
             // 
             // btnHRM
             // 
@@ -392,6 +387,17 @@
             this.btnHRM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHRM.UseVisualStyleBackColor = false;
             this.btnHRM.Click += new System.EventHandler(this.btnHRM_Click);
+
+            // 
+            // pnHRM_Menu
+            // 
+            this.pnHRM_Menu.Controls.Add(this.btnHRM);
+            this.pnHRM_Menu.Location = new System.Drawing.Point(0, 0);
+            this.pnHRM_Menu.Margin = new System.Windows.Forms.Padding(0);
+            this.pnHRM_Menu.Name = "pnHRM_Menu";
+            this.pnHRM_Menu.Size = new System.Drawing.Size(228, 39);
+            this.pnHRM_Menu.TabIndex = 0;
+            
 
             // 
             // pn_Staff
@@ -423,7 +429,7 @@
             this.btn_Staff.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btn_Staff.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_Staff.Size = new System.Drawing.Size(228, 39);
-            this.btn_Staff.TabIndex = 3;
+            this.btn_Staff.TabIndex = 4;
             this.btn_Staff.Text = "        Quản lý nhân viên";
             this.btn_Staff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Staff.UseVisualStyleBackColor = false;
@@ -460,7 +466,7 @@
             this.btnTimekeeping.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnTimekeeping.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnTimekeeping.Size = new System.Drawing.Size(228, 39);
-            this.btnTimekeeping.TabIndex = 3;
+            this.btnTimekeeping.TabIndex = 4;
             this.btnTimekeeping.Text = "        Chấm công";
             this.btnTimekeeping.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimekeeping.UseVisualStyleBackColor = false;
@@ -496,12 +502,47 @@
             this.btnSalary.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnSalary.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSalary.Size = new System.Drawing.Size(228, 39);
-            this.btnSalary.TabIndex = 3;
+            this.btnSalary.TabIndex = 4;
             this.btnSalary.Text = "        Lương";
             this.btnSalary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalary.UseVisualStyleBackColor = false;
             this.btnSalary.Click += new System.EventHandler(this.btnSalary_Click);
 
+            // 
+            // pningr_salary
+            // 
+            this.pningr_salary.Controls.Add(this.btningr_salary);
+            this.pningr_salary.Location = new System.Drawing.Point(0, 157);
+            this.pningr_salary.Margin = new System.Windows.Forms.Padding(0);
+            this.pningr_salary.Name = "pningr_salary";
+            this.pningr_salary.Size = new System.Drawing.Size(228, 39);
+            this.pningr_salary.TabIndex = 4;
+            // 
+            // btningr_salary
+            // 
+            this.btningr_salary.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btningr_salary.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btningr_salary.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btningr_salary.BorderRadius = 40;
+            this.btningr_salary.BorderSize = 0;
+            this.btningr_salary.FlatAppearance.BorderSize = 0;
+            this.btningr_salary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningr_salary.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningr_salary.ForeColor = System.Drawing.Color.Black;
+            this.btningr_salary.ForegroundColor = System.Drawing.Color.Black;
+            this.btningr_salary.Image = global::GUI.Properties.Resources.icons8_add_24;
+            this.btningr_salary.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningr_salary.Location = new System.Drawing.Point(0, 0);
+            this.btningr_salary.Margin = new System.Windows.Forms.Padding(0);
+            this.btningr_salary.Name = "btningr_salary";
+            this.btningr_salary.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btningr_salary.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btningr_salary.Size = new System.Drawing.Size(228, 39);
+            this.btningr_salary.TabIndex = 4;
+            this.btningr_salary.Text = "        Thành phần lương";
+            this.btningr_salary.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btningr_salary.UseVisualStyleBackColor = false;
+            this.btningr_salary.Click += new System.EventHandler(this.btningr_salary_Click);
             // 
             // pnRole
             // 
@@ -792,6 +833,7 @@
             this.pnTimekeeping.ResumeLayout(false);
             this.pnHRM.ResumeLayout(false);
             this.pnSalary.ResumeLayout(false);
+            this.pningr_salary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -833,6 +875,8 @@
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnSalary;
         private GUI_COMPONENT.ButtonRounded btnSalary;
+        private System.Windows.Forms.Panel pningr_salary;
+        private GUI_COMPONENT.ButtonRounded btningr_salary;
         private System.Windows.Forms.Panel pnHRM;
         private System.Windows.Forms.Panel pnTimekeeping;
         private GUI_COMPONENT.ButtonRounded btnTimekeeping;

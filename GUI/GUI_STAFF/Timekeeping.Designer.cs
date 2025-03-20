@@ -100,7 +100,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 28);
+            this.label1.Size = new System.Drawing.Size(157, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "BẢNG CHẤM CÔNG";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -205,10 +205,10 @@
             this.dateNgayChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateNgayChamCong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateNgayChamCong.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNgayChamCong.Location = new System.Drawing.Point(137, 15);
+            this.dateNgayChamCong.Location = new System.Drawing.Point(110, 15);
             this.dateNgayChamCong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateNgayChamCong.Name = "dateNgayChamCong";
-            this.dateNgayChamCong.Size = new System.Drawing.Size(115, 30);
+            this.dateNgayChamCong.Size = new System.Drawing.Size(142, 26);
             this.dateNgayChamCong.TabIndex = 4;
             // 
             // label6
@@ -218,7 +218,7 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(0, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 28);
+            this.label6.Size = new System.Drawing.Size(110, 23);
             this.label6.TabIndex = 0;
             this.label6.Text = "Ngày chấm công";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -241,9 +241,9 @@
             // 
             this.txtMaChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaChamCong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.txtMaChamCong.Location = new System.Drawing.Point(134, 15);
+            this.txtMaChamCong.Location = new System.Drawing.Point(108, 15);
             this.txtMaChamCong.Name = "txtMaChamCong";
-            this.txtMaChamCong.Size = new System.Drawing.Size(112, 30);
+            this.txtMaChamCong.Size = new System.Drawing.Size(138, 26);
             this.txtMaChamCong.TabIndex = 1;
             this.txtMaChamCong.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
@@ -254,7 +254,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 15);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 28);
+            this.label5.Size = new System.Drawing.Size(108, 23);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mã chấm công:  ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,10 +305,10 @@
             // 
             this.txtTenNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNhanVien.Location = new System.Drawing.Point(118, 15);
+            this.txtTenNhanVien.Location = new System.Drawing.Point(95, 15);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(159, 30);
+            this.txtTenNhanVien.Size = new System.Drawing.Size(182, 26);
             this.txtTenNhanVien.TabIndex = 1;
             // 
             // label4
@@ -318,7 +318,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 28);
+            this.label4.Size = new System.Drawing.Size(95, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tên nhân viên:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -340,10 +340,10 @@
             // 
             this.txtMaNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNhanVien.Location = new System.Drawing.Point(118, 15);
+            this.txtMaNhanVien.Location = new System.Drawing.Point(96, 15);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(120, 30);
+            this.txtMaNhanVien.Size = new System.Drawing.Size(142, 26);
             this.txtMaNhanVien.TabIndex = 1;
             // 
             // label2
@@ -353,7 +353,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 23);
+            this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã nhân viên:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -525,7 +525,7 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
-            this.STT.Width = 84;
+            this.STT.Width = 70;
             // 
             // MaChamCong
             // 
@@ -534,7 +534,7 @@
             this.MaChamCong.MinimumWidth = 6;
             this.MaChamCong.Name = "MaChamCong";
             this.MaChamCong.ReadOnly = true;
-            this.MaChamCong.Width = 211;
+            this.MaChamCong.Width = 171;
             // 
             // TenNV
             // 
@@ -543,7 +543,7 @@
             this.TenNV.MinimumWidth = 6;
             this.TenNV.Name = "TenNV";
             this.TenNV.ReadOnly = true;
-            this.TenNV.Width = 207;
+            this.TenNV.Width = 169;
             // 
             // ThoiGianChamCong
             // 
@@ -552,7 +552,7 @@
             this.ThoiGianChamCong.MinimumWidth = 6;
             this.ThoiGianChamCong.Name = "ThoiGianChamCong";
             this.ThoiGianChamCong.ReadOnly = true;
-            this.ThoiGianChamCong.Width = 283;
+            this.ThoiGianChamCong.Width = 227;
             // 
             // DiLam
             // 
@@ -561,7 +561,7 @@
             this.DiLam.MinimumWidth = 6;
             this.DiLam.Name = "DiLam";
             this.DiLam.ReadOnly = true;
-            this.DiLam.Width = 119;
+            this.DiLam.Width = 98;
             // 
             // DiTre
             // 
@@ -570,7 +570,7 @@
             this.DiTre.MinimumWidth = 6;
             this.DiTre.Name = "DiTre";
             this.DiTre.ReadOnly = true;
-            this.DiTre.Width = 112;
+            this.DiTre.Width = 92;
             // 
             // NghiPhep
             // 
@@ -579,7 +579,7 @@
             this.NghiPhep.MinimumWidth = 6;
             this.NghiPhep.Name = "NghiPhep";
             this.NghiPhep.ReadOnly = true;
-            this.NghiPhep.Width = 156;
+            this.NghiPhep.Width = 129;
             // 
             // NghiKhongPhep
             // 
@@ -590,7 +590,7 @@
             this.NghiKhongPhep.MinimumWidth = 6;
             this.NghiKhongPhep.Name = "NghiKhongPhep";
             this.NghiKhongPhep.ReadOnly = true;
-            this.NghiKhongPhep.Width = 235;
+            this.NghiKhongPhep.Width = 191;
             // 
             // LamNgayNghi
             // 
@@ -601,7 +601,7 @@
             this.LamNgayNghi.MinimumWidth = 6;
             this.LamNgayNghi.Name = "LamNgayNghi";
             this.LamNgayNghi.ReadOnly = true;
-            this.LamNgayNghi.Width = 209;
+            this.LamNgayNghi.Width = 170;
             // 
             // LamNgayLe
             // 
@@ -610,11 +610,11 @@
             this.LamNgayLe.MinimumWidth = 6;
             this.LamNgayLe.Name = "LamNgayLe";
             this.LamNgayLe.ReadOnly = true;
-            this.LamNgayLe.Width = 179;
+            this.LamNgayLe.Width = 146;
             // 
             // Timekeeping
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1380, 788);
