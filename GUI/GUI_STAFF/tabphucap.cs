@@ -16,5 +16,7 @@ namespace GUI.GUI_STAFF
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -36,6 +36,19 @@ namespace GUI.GUI_STAFF
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
+            this.panel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonRounded1 = new GUI.GUI_COMPONENT.ButtonRounded();
+            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,12 +63,10 @@ namespace GUI.GUI_STAFF
             this.HIEULUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnSave = new GUI.GUI_COMPONENT.ButtonRounded();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panelRounded2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -65,9 +76,6 @@ namespace GUI.GUI_STAFF
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panelRounded2.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label6
@@ -92,6 +100,183 @@ namespace GUI.GUI_STAFF
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(374, 399);
             this.panel2.TabIndex = 0;
+            // 
+            // panelRounded2
+            // 
+            this.panelRounded2.BackColor = System.Drawing.Color.White;
+            this.panelRounded2.BorderColor = System.Drawing.Color.White;
+            this.panelRounded2.BorderFocusColor = System.Drawing.Color.White;
+            this.panelRounded2.BorderRadius = 10;
+            this.panelRounded2.BorderSize = 2;
+            this.panelRounded2.Controls.Add(this.panel3);
+            this.panelRounded2.Controls.Add(this.panel5);
+            this.panelRounded2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRounded2.Location = new System.Drawing.Point(0, 0);
+            this.panelRounded2.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRounded2.Name = "panelRounded2";
+            this.panelRounded2.Padding = new System.Windows.Forms.Padding(4);
+            this.panelRounded2.Size = new System.Drawing.Size(374, 399);
+            this.panelRounded2.TabIndex = 3;
+            this.panelRounded2.UnderlinedStyle = false;
+            // 
+            // panel3
+            // 
+            this.panel3.ColumnCount = 2;
+            this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.panel3.Controls.Add(this.buttonRounded1, 1, 4);
+            this.panel3.Controls.Add(this.dtpNgayVaoLam, 1, 3);
+            this.panel3.Controls.Add(this.label9, 0, 3);
+            this.panel3.Controls.Add(this.textBox2, 1, 2);
+            this.panel3.Controls.Add(this.label8, 0, 2);
+            this.panel3.Controls.Add(this.textBox1, 1, 1);
+            this.panel3.Controls.Add(this.label5, 0, 1);
+            this.panel3.Controls.Add(this.txtTenNV, 1, 0);
+            this.panel3.Controls.Add(this.label4, 0, 0);
+            this.panel3.Location = new System.Drawing.Point(4, 49);
+            this.panel3.Name = "panel3";
+            this.panel3.RowCount = 5;
+            this.panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.panel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.panel3.Size = new System.Drawing.Size(366, 346);
+            this.panel3.TabIndex = 4;
+            // 
+            // buttonRounded1
+            // 
+            this.buttonRounded1.BackColor = System.Drawing.Color.Green;
+            this.buttonRounded1.BackgroundColor = System.Drawing.Color.Green;
+            this.buttonRounded1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.buttonRounded1.BorderRadius = 30;
+            this.buttonRounded1.BorderSize = 0;
+            this.buttonRounded1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonRounded1.FlatAppearance.BorderSize = 0;
+            this.buttonRounded1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRounded1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRounded1.ForeColor = System.Drawing.Color.White;
+            this.buttonRounded1.ForegroundColor = System.Drawing.Color.White;
+            this.buttonRounded1.Location = new System.Drawing.Point(246, 318);
+            this.buttonRounded1.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRounded1.Name = "buttonRounded1";
+            this.buttonRounded1.Size = new System.Drawing.Size(118, 26);
+            this.buttonRounded1.TabIndex = 10;
+            this.buttonRounded1.Text = "Lưu trạng thái";
+            this.buttonRounded1.UseVisualStyleBackColor = false;
+            // 
+            // dtpNgayVaoLam
+            // 
+            this.dtpNgayVaoLam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpNgayVaoLam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(185, 239);
+            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
+            this.dtpNgayVaoLam.Size = new System.Drawing.Size(179, 23);
+            this.dtpNgayVaoLam.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(2, 237);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(179, 32);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Hiệu lực";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(185, 160);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 23);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(2, 158);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(179, 32);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Mức phụ cấp";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(185, 81);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 23);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(2, 79);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 32);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Loại phụ cấp";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtTenNV
+            // 
+            this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNV.Location = new System.Drawing.Point(185, 2);
+            this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenNV.Name = "txtTenNV";
+            this.txtTenNV.Size = new System.Drawing.Size(179, 23);
+            this.txtTenNV.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(2, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 32);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Chức vụ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(366, 45);
+            this.panel5.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.ForestGreen;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(366, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "CHỈNH SỬA PHỤ CẤP";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -254,11 +439,11 @@ namespace GUI.GUI_STAFF
             // TENPHUCAP
             // 
             this.TENPHUCAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TENPHUCAP.HeaderText = "TÊN PHỤ CẤP";
+            this.TENPHUCAP.HeaderText = "LOẠI PHỤ CẤP";
             this.TENPHUCAP.MinimumWidth = 6;
             this.TENPHUCAP.Name = "TENPHUCAP";
             this.TENPHUCAP.ReadOnly = true;
-            this.TENPHUCAP.Width = 130;
+            this.TENPHUCAP.Width = 135;
             // 
             // MUCPHUCAP
             // 
@@ -302,80 +487,6 @@ namespace GUI.GUI_STAFF
             this.label7.Text = "DANH SÁCH PHỤ CẤP";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelRounded2
-            // 
-            this.panelRounded2.BackColor = System.Drawing.Color.White;
-            this.panelRounded2.BorderColor = System.Drawing.Color.White;
-            this.panelRounded2.BorderFocusColor = System.Drawing.Color.White;
-            this.panelRounded2.BorderRadius = 10;
-            this.panelRounded2.BorderSize = 2;
-            this.panelRounded2.Controls.Add(this.panel8);
-            this.panelRounded2.Controls.Add(this.panel5);
-            this.panelRounded2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRounded2.Location = new System.Drawing.Point(0, 0);
-            this.panelRounded2.Margin = new System.Windows.Forms.Padding(2);
-            this.panelRounded2.Name = "panelRounded2";
-            this.panelRounded2.Padding = new System.Windows.Forms.Padding(4);
-            this.panelRounded2.Size = new System.Drawing.Size(374, 399);
-            this.panelRounded2.TabIndex = 3;
-            this.panelRounded2.UnderlinedStyle = false;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.btnSave);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(4, 354);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
-            this.panel8.Name = "panel8";
-            this.panel8.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(366, 41);
-            this.panel8.TabIndex = 3;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Green;
-            this.btnSave.BackgroundColor = System.Drawing.Color.Green;
-            this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSave.BorderRadius = 30;
-            this.btnSave.BorderSize = 0;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.ForegroundColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(248, 4);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(118, 37);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Lưu trạng thái";
-            this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(4, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(366, 45);
-            this.panel5.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.ForestGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "CHỈNH SỬA PHỤ CẤP";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tabphucap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +497,10 @@ namespace GUI.GUI_STAFF
             this.Name = "tabphucap";
             this.Text = "Form1";
             this.panel2.ResumeLayout(false);
+            this.panelRounded2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -396,9 +511,6 @@ namespace GUI.GUI_STAFF
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panelRounded2.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -406,8 +518,6 @@ namespace GUI.GUI_STAFF
         #endregion
 
         private GUI_COMPONENT.PanelRounded panelRounded2;
-        private System.Windows.Forms.Panel panel8;
-        private GUI_COMPONENT.ButtonRounded btnSave;
         private System.Windows.Forms.Panel panel5;
        
         private System.Windows.Forms.Label label6;
@@ -428,5 +538,15 @@ namespace GUI.GUI_STAFF
         private System.Windows.Forms.DataGridViewTextBoxColumn TENPHUCAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MUCPHUCAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn HIEULUC;
+        private System.Windows.Forms.TableLayoutPanel panel3;
+        private DateTimePicker dtpNgayVaoLam;
+        private Label label9;
+        private TextBox textBox2;
+        private Label label8;
+        private TextBox textBox1;
+        private Label label5;
+        private TextBox txtTenNV;
+        private Label label4;
+        private GUI_COMPONENT.ButtonRounded buttonRounded1;
     }
 }
