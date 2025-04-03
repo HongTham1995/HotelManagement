@@ -124,6 +124,19 @@ namespace GUI.GUI_STAFF
             this.tabLuong.Size = new System.Drawing.Size(917, 532);
             this.tabLuong.TabIndex = 1;
             this.tabLuong.Text = "Lương";
+
+           tabluong formtabluong = new tabluong();
+
+            // Cấu hình form để có thể nhúng vào TabPage
+            formtabluong.TopLevel = false;
+            formtabluong.FormBorderStyle = FormBorderStyle.None;
+            formtabluong.Dock = DockStyle.Fill;
+
+            // Thêm form vào TabPage
+            this.tabLuong.Controls.Add(formtabluong);
+
+            // Hiển thị form
+            formtabluong.Show();
             // 
             // tabThamNien
             // 
@@ -132,6 +145,20 @@ namespace GUI.GUI_STAFF
             this.tabThamNien.Size = new System.Drawing.Size(917, 532);
             this.tabThamNien.TabIndex = 2;
             this.tabThamNien.Text = "Thâm niên";
+
+            // Tạo một instance của tabthamnien
+           tabthamnien formthamnien = new tabthamnien();
+
+            // Cấu hình form để có thể nhúng vào TabPage
+            formthamnien.TopLevel = false;
+            formthamnien.FormBorderStyle = FormBorderStyle.None;
+            formthamnien.Dock = DockStyle.Fill;
+
+            // Thêm form vào TabPage
+            this.tabThamNien.Controls.Add(formthamnien);
+
+            // Hiển thị form
+            formthamnien.Show();
             // 
             // tabLoaiCong
             // 
@@ -140,6 +167,20 @@ namespace GUI.GUI_STAFF
             this.tabLoaiCong.Size = new System.Drawing.Size(917, 532);
             this.tabLoaiCong.TabIndex = 3;
             this.tabLoaiCong.Text = "Loại công";
+
+            // Tạo một instance của tabloaicong
+            tabloaicong formloaicong = new tabloaicong();
+
+            // Cấu hình form để có thể nhúng vào TabPage
+            formloaicong.TopLevel = false;
+            formloaicong.FormBorderStyle = FormBorderStyle.None;
+            formloaicong.Dock = DockStyle.Fill;
+
+            // Thêm form vào TabPage
+            this.tabLoaiCong.Controls.Add(formloaicong);
+
+            // Hiển thị form
+            formloaicong.Show();
             // 
             // panel14
             // 

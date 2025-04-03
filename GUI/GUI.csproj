@@ -518,6 +518,24 @@
     <Compile Include="GUI_SERVICE\ServiceForm.Designer.cs">
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_STAFF\tabloaicong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_STAFF\tabloaicong.Designer.cs">
+      <DependentUpon>tabloaicong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_STAFF\tabthamnien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_STAFF\tabthamnien.Designer.cs">
+      <DependentUpon>tabthamnien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_STAFF\tabluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_STAFF\tabluong.Designer.cs">
+      <DependentUpon>tabluong.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_STAFF\tabphucap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,6 +701,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_STAFF\tabluong.resx">
+      <DependentUpon>tabluong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\tabphucap.resx">
       <DependentUpon>tabphucap.cs</DependentUpon>
