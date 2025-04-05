@@ -14,18 +14,98 @@ namespace DAO
         SqlConnection conn;
         SqlDataAdapter da;
         DataSet ds;
-        public string serverName = "127.0.0.1";
+        public string serverName = "HOANG\\MSSQLSERVERHOANG";
         public string dbName = "QLKS_DN";
         public string userName = "sa";
-        public string password = "123456";
+        public string password = "";
+        private string connectionString;
+
+
         public Database()
         {
-            // Chuỗi kết nối SQL Server Local với thông tin đã cung cấp
-            string stringConnect = $"Server={serverName}; Database={dbName}; User Id={userName}; Password={password}; TrustServerCertificate=True;";
-
-            conn = new SqlConnection(stringConnect);
+            connectionString = $"Server={serverName}; Database={dbName}; Integrated Security=True; TrustServerCertificate=True;";
+            conn = new SqlConnection(connectionString);
         }
 
+        public string GetConnectionString()
+        {
+            return connectionString;
+        }
+        public SqlConnection OpenConnection()
+        {
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Connection string is not initialized.");
+            }
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            return conn;
+        }
+
+
+        public void CloseConnection()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+        }
+
+        public DataTable ExecuteQuery(string query)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                OpenConnection();
+                da = new SqlDataAdapter(query, conn);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return dt;
+        }
+
+        public int ExecuteNonQuery(string query)
+        {
+            int rowsAffected = 0;
+            try
+            {
+                OpenConnection();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    rowsAffected = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return rowsAffected;
+        }
+
+        public DataTable ExecuteQuery(string query, SqlParameter[] parameters = null)
+        {
+            DataTable dataTable = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                if (parameters != null) cmd.Parameters.AddRange(parameters);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(dataTable);
+            }
+            return dataTable;
+        }
         public DataTable getList(string query)
         {
             da = new SqlDataAdapter(query, conn);
@@ -34,13 +114,7 @@ namespace DAO
             return ds.Tables[0];
         }
 
-        public void ExecuteNonQuery(string query)
-        {
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
+    
 
         public int ExecuteNonQuery_getInteger(string query)
         {
@@ -273,6 +347,118 @@ namespace DAO
             }
             conn.Close();
             return list;
+        }
+        public class TimekeepingDAL
+        {
+            private Database db;
+
+            public TimekeepingDAL()
+            {
+                db = new Database();
+            }
+
+            public void SaveAttendance(int employeeId, DateTime date, string status)
+            {
+                string query = "INSERT INTO CHAMCONG (maNV, Thoigian, MaLC) VALUES (@maNV, @Thoigian, @MaLC)";
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@maNV", employeeId);
+                    cmd.Parameters.AddWithValue("@Thoigian", date);
+                    cmd.Parameters.AddWithValue("@MaLC", status);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            public DataTable GetTimekeeping(int month, int year)
+            {
+                string query = @"SELECT * FROM CHAMCONG WHERE MONTH(Thoigian) = @Month AND YEAR(Thoigian) = @Year";
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Month", month);
+                    cmd.Parameters.AddWithValue("@Year", year);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    return dataTable;
+                }
+            }
+            public List<ChamCongDTO> GetAllChamCong()
+            {
+                List<ChamCongDTO> list = new List<ChamCongDTO>();
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM CHAMCONG";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        ChamCongDTO chamCong = new ChamCongDTO()
+                        {
+                            MaCC = reader["MaCC"].ToString(),
+                            MaNV = reader["maNV"].ToString(),
+                            MaLC = reader["MaLC"].ToString(),
+                            MaCT = reader["MaCT"].ToString(),
+                            ThoiGian = reader["Thoigian"].ToString(),
+                            GhiChu = reader["GhiChu"].ToString()
+                        };
+                        list.Add(chamCong);
+                    }
+                }
+                return list;
+            }
+
+            // 🔹 Thêm mới chấm công
+            public bool InsertChamCong(ChamCongDTO chamCong)
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(db.connectionString))
+                    {
+                        conn.Open();
+                        string query = "INSERT INTO CHAMCONG (MaCC, maNV, MaLC, MaCT, Thoigian, GhiChu) VALUES (@MaCC, @MaNV, @MaLC, @MaCT, @Thoigian, @GhiChu)";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@MaCC", chamCong.MaCC);
+                        cmd.Parameters.AddWithValue("@MaNV", chamCong.MaNV);
+                        cmd.Parameters.AddWithValue("@MaLC", chamCong.MaLC);
+                        cmd.Parameters.AddWithValue("@MaCT", chamCong.MaCT);
+                        cmd.Parameters.AddWithValue("@Thoigian", chamCong.ThoiGian);
+                        cmd.Parameters.AddWithValue("@GhiChu", chamCong.GhiChu);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Ghi lại lỗi hoặc ném lại với thông tin chi tiết
+                    Console.WriteLine($"Lỗi SQL: {ex.Message}");
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    // Ghi lại lỗi hoặc ném lại với thông tin chi tiết
+                    Console.WriteLine($"Lỗi tổng quát: {ex.Message}");
+                    return false;
+                }
+            }
+
+            // 🔹 Xóa chấm công
+            public bool DeleteChamCong(string maCC)
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM CHAMCONG WHERE MaCC = @MaCC";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@MaCC", maCC);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
         }
     }
 }
