@@ -702,11 +702,17 @@
     <EmbeddedResource Include="GUI_STAFF\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_STAFF\tabloaicong.resx">
+      <DependentUpon>tabloaicong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\tabluong.resx">
       <DependentUpon>tabluong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\tabphucap.resx">
       <DependentUpon>tabphucap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_STAFF\tabthamnien.resx">
+      <DependentUpon>tabthamnien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\Timekeeping.resx">
       <DependentUpon>Timekeeping.cs</DependentUpon>
