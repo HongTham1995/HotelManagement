@@ -518,6 +518,7 @@
     <Compile Include="GUI_SERVICE\ServiceForm.Designer.cs">
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
+
     <Compile Include="GUI_STAFF\tabloaicong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -542,6 +543,7 @@
     <Compile Include="GUI_STAFF\tabphucap.Designer.cs">
       <DependentUpon>tabphucap.cs</DependentUpon>
     </Compile>
+
     <Compile Include="GUI_STAFF\ingr_salary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -716,6 +718,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_STAFF\Timekeeping.resx">
       <DependentUpon>Timekeeping.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_THONGKE\FormChart.resx">
       <DependentUpon>FormChart.cs</DependentUpon>

@@ -1,4 +1,6 @@
-﻿namespace GUI.GUI_STAFF
+﻿using System.Windows.Forms;
+
+namespace GUI.GUI_STAFF
 {
     partial class Timekeeping
     {
@@ -29,10 +31,17 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,8 +67,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnReset = new GUI.GUI_COMPONENT.ButtonRounded();
             this.btnSearch = new GUI.GUI_COMPONENT.ButtonRounded();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvChiTietChamCong = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataChamCong = new System.Windows.Forms.DataGridView();
@@ -85,8 +92,6 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietChamCong)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataChamCong)).BeginInit();
@@ -113,7 +118,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(15, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1350, 51);
+            this.panel1.Size = new System.Drawing.Size(1894, 51);
             this.panel1.TabIndex = 1;
             // 
             // btnChamCong
@@ -128,7 +133,7 @@
             this.btnChamCong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChamCong.ForeColor = System.Drawing.Color.White;
             this.btnChamCong.ForegroundColor = System.Drawing.Color.White;
-            this.btnChamCong.Location = new System.Drawing.Point(1210, 0);
+            this.btnChamCong.Location = new System.Drawing.Point(1754, 0);
             this.btnChamCong.Name = "btnChamCong";
             this.btnChamCong.Size = new System.Drawing.Size(140, 51);
             this.btnChamCong.TabIndex = 12;
@@ -144,7 +149,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(7);
-            this.panel2.Size = new System.Drawing.Size(1350, 90);
+            this.panel2.Size = new System.Drawing.Size(1894, 90);
             this.panel2.TabIndex = 16;
             // 
             // panelRounded1
@@ -161,7 +166,7 @@
             this.panelRounded1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRounded1.Name = "panelRounded1";
             this.panelRounded1.Padding = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.panelRounded1.Size = new System.Drawing.Size(1336, 76);
+            this.panelRounded1.Size = new System.Drawing.Size(1880, 76);
             this.panelRounded1.TabIndex = 1;
             this.panelRounded1.UnderlinedStyle = false;
             // 
@@ -184,7 +189,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1306, 66);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1850, 66);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel7
@@ -192,11 +197,11 @@
             this.panel7.Controls.Add(this.dateNgayChamCong);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(788, 2);
+            this.panel7.Location = new System.Drawing.Point(1115, 2);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
             this.panel7.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panel7.Size = new System.Drawing.Size(252, 62);
+            this.panel7.Size = new System.Drawing.Size(360, 62);
             this.panel7.TabIndex = 3;
             // 
             // dateNgayChamCong
@@ -208,7 +213,10 @@
             this.dateNgayChamCong.Location = new System.Drawing.Point(110, 15);
             this.dateNgayChamCong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateNgayChamCong.Name = "dateNgayChamCong";
-            this.dateNgayChamCong.Size = new System.Drawing.Size(142, 26);
+
+            this.dateNgayChamCong.Size = new System.Drawing.Size(223, 30);
+
+  
             this.dateNgayChamCong.TabIndex = 4;
             // 
             // label6
@@ -230,11 +238,11 @@
             this.panel6.Controls.Add(this.txtMaChamCong);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(536, 2);
+            this.panel6.Location = new System.Drawing.Point(758, 2);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panel6.Size = new System.Drawing.Size(246, 62);
+            this.panel6.Size = new System.Drawing.Size(351, 62);
             this.panel6.TabIndex = 2;
             // 
             // txtMaChamCong
@@ -243,7 +251,9 @@
             this.txtMaChamCong.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtMaChamCong.Location = new System.Drawing.Point(108, 15);
             this.txtMaChamCong.Name = "txtMaChamCong";
-            this.txtMaChamCong.Size = new System.Drawing.Size(138, 26);
+
+            this.txtMaChamCong.Size = new System.Drawing.Size(217, 30);
+
             this.txtMaChamCong.TabIndex = 1;
             this.txtMaChamCong.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
@@ -268,7 +278,7 @@
             this.panel5.Location = new System.Drawing.Point(3, 2);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(527, 62);
+            this.panel5.Size = new System.Drawing.Size(749, 62);
             this.panel5.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -285,7 +295,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(527, 62);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(749, 62);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel8
@@ -294,11 +304,11 @@
             this.panel8.Controls.Add(this.txtTenNhanVien);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(247, 2);
+            this.panel8.Location = new System.Drawing.Point(350, 2);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
             this.panel8.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panel8.Size = new System.Drawing.Size(277, 58);
+            this.panel8.Size = new System.Drawing.Size(396, 58);
             this.panel8.TabIndex = 2;
             // 
             // txtTenNhanVien
@@ -308,7 +318,9 @@
             this.txtTenNhanVien.Location = new System.Drawing.Point(95, 15);
             this.txtTenNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
-            this.txtTenNhanVien.Size = new System.Drawing.Size(182, 26);
+
+            this.txtTenNhanVien.Size = new System.Drawing.Size(278, 30);
+
             this.txtTenNhanVien.TabIndex = 1;
             // 
             // label4
@@ -333,7 +345,7 @@
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
             this.panel9.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.panel9.Size = new System.Drawing.Size(238, 58);
+            this.panel9.Size = new System.Drawing.Size(341, 58);
             this.panel9.TabIndex = 1;
             // 
             // txtMaNhanVien
@@ -343,7 +355,9 @@
             this.txtMaNhanVien.Location = new System.Drawing.Point(96, 15);
             this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(142, 26);
+
+            this.txtMaNhanVien.Size = new System.Drawing.Size(223, 30);
+
             this.txtMaNhanVien.TabIndex = 1;
             // 
             // label2
@@ -362,10 +376,10 @@
             // 
             this.panel10.Controls.Add(this.tableLayoutPanel3);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(1046, 2);
+            this.panel10.Location = new System.Drawing.Point(1481, 2);
             this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(257, 62);
+            this.panel10.Size = new System.Drawing.Size(366, 62);
             this.panel10.TabIndex = 4;
             // 
             // tableLayoutPanel3
@@ -381,7 +395,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(257, 62);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(366, 62);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // btnReset
@@ -397,13 +411,14 @@
             this.btnReset.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.ForegroundColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(136, 10);
+            this.btnReset.Location = new System.Drawing.Point(191, 10);
             this.btnReset.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(116, 42);
+            this.btnReset.Size = new System.Drawing.Size(170, 42);
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "Làm mới";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnSearch
             // 
@@ -421,30 +436,11 @@
             this.btnSearch.Location = new System.Drawing.Point(5, 10);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(121, 42);
+            this.btnSearch.Size = new System.Drawing.Size(176, 42);
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dgvChiTietChamCong);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(15, 596);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1350, 177);
-            this.panel4.TabIndex = 4;
-            // 
-            // dgvChiTietChamCong
-            // 
-            this.dgvChiTietChamCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiTietChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvChiTietChamCong.Location = new System.Drawing.Point(0, 0);
-            this.dgvChiTietChamCong.Name = "dgvChiTietChamCong";
-            this.dgvChiTietChamCong.RowHeadersWidth = 51;
-            this.dgvChiTietChamCong.RowTemplate.Height = 24;
-            this.dgvChiTietChamCong.Size = new System.Drawing.Size(1350, 177);
-            this.dgvChiTietChamCong.TabIndex = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel3
             // 
@@ -453,7 +449,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(15, 66);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1350, 530);
+            this.panel3.Size = new System.Drawing.Size(1894, 530);
             this.panel3.TabIndex = 3;
             // 
             // panel12
@@ -463,7 +459,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel12.Location = new System.Drawing.Point(0, 95);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(1350, 435);
+            this.panel12.Size = new System.Drawing.Size(1894, 435);
             this.panel12.TabIndex = 17;
             // 
             // dataChamCong
@@ -495,15 +491,15 @@
             this.NghiKhongPhep,
             this.LamNgayNghi,
             this.LamNgayLe});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataChamCong.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataChamCong.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataChamCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataChamCong.EnableHeadersVisualStyles = false;
             this.dataChamCong.Location = new System.Drawing.Point(0, 0);
@@ -512,13 +508,14 @@
             this.dataChamCong.RowHeadersWidth = 51;
             this.dataChamCong.RowTemplate.Height = 35;
             this.dataChamCong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataChamCong.Size = new System.Drawing.Size(1350, 435);
+            this.dataChamCong.Size = new System.Drawing.Size(1894, 435);
             this.dataChamCong.TabIndex = 15;
             this.dataChamCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataChamCong_CellContentClick);
             // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT.DataPropertyName = "STT";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.STT.DefaultCellStyle = dataGridViewCellStyle2;
             this.STT.HeaderText = "STT";
@@ -530,6 +527,9 @@
             // MaChamCong
             // 
             this.MaChamCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.MaChamCong.DataPropertyName = "MaChamCong";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.MaChamCong.DefaultCellStyle = dataGridViewCellStyle3;
             this.MaChamCong.HeaderText = "MÃ CHẤM CÔNG";
             this.MaChamCong.MinimumWidth = 6;
             this.MaChamCong.Name = "MaChamCong";
@@ -539,6 +539,9 @@
             // TenNV
             // 
             this.TenNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TenNV.DataPropertyName = "TenNV";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TenNV.DefaultCellStyle = dataGridViewCellStyle4;
             this.TenNV.HeaderText = "TÊN NHÂN VIÊN";
             this.TenNV.MinimumWidth = 6;
             this.TenNV.Name = "TenNV";
@@ -548,6 +551,9 @@
             // ThoiGianChamCong
             // 
             this.ThoiGianChamCong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ThoiGianChamCong.DataPropertyName = "ThoiGianChamCong";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ThoiGianChamCong.DefaultCellStyle = dataGridViewCellStyle5;
             this.ThoiGianChamCong.HeaderText = "THỜI GIAN CHẤM CÔNG";
             this.ThoiGianChamCong.MinimumWidth = 6;
             this.ThoiGianChamCong.Name = "ThoiGianChamCong";
@@ -557,6 +563,9 @@
             // DiLam
             // 
             this.DiLam.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DiLam.DataPropertyName = "DiLam";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DiLam.DefaultCellStyle = dataGridViewCellStyle6;
             this.DiLam.HeaderText = "ĐI LÀM";
             this.DiLam.MinimumWidth = 6;
             this.DiLam.Name = "DiLam";
@@ -566,6 +575,9 @@
             // DiTre
             // 
             this.DiTre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DiTre.DataPropertyName = "DiTre";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DiTre.DefaultCellStyle = dataGridViewCellStyle7;
             this.DiTre.HeaderText = "ĐI TRỄ";
             this.DiTre.MinimumWidth = 6;
             this.DiTre.Name = "DiTre";
@@ -575,6 +587,9 @@
             // NghiPhep
             // 
             this.NghiPhep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NghiPhep.DataPropertyName = "NghiPhep";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NghiPhep.DefaultCellStyle = dataGridViewCellStyle8;
             this.NghiPhep.HeaderText = "NGHỈ PHÉP";
             this.NghiPhep.MinimumWidth = 6;
             this.NghiPhep.Name = "NghiPhep";
@@ -584,8 +599,9 @@
             // NghiKhongPhep
             // 
             this.NghiKhongPhep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.NghiKhongPhep.DefaultCellStyle = dataGridViewCellStyle3;
+            this.NghiKhongPhep.DataPropertyName = "NghiKhongPhep";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NghiKhongPhep.DefaultCellStyle = dataGridViewCellStyle9;
             this.NghiKhongPhep.HeaderText = "NGHỈ KHÔNG PHÉP";
             this.NghiKhongPhep.MinimumWidth = 6;
             this.NghiKhongPhep.Name = "NghiKhongPhep";
@@ -595,8 +611,9 @@
             // LamNgayNghi
             // 
             this.LamNgayNghi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.LamNgayNghi.DefaultCellStyle = dataGridViewCellStyle4;
+            this.LamNgayNghi.DataPropertyName = "LamNgayNghi";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LamNgayNghi.DefaultCellStyle = dataGridViewCellStyle10;
             this.LamNgayNghi.HeaderText = "LÀM NGÀY NGHỈ";
             this.LamNgayNghi.MinimumWidth = 6;
             this.LamNgayNghi.Name = "LamNgayNghi";
@@ -606,6 +623,9 @@
             // LamNgayLe
             // 
             this.LamNgayLe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.LamNgayLe.DataPropertyName = "LamNgayLe";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.LamNgayLe.DefaultCellStyle = dataGridViewCellStyle11;
             this.LamNgayLe.HeaderText = "LÀM NGÀY LỄ";
             this.LamNgayLe.MinimumWidth = 6;
             this.LamNgayLe.Name = "LamNgayLe";
@@ -617,8 +637,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1380, 788);
-            this.Controls.Add(this.panel4);
+            this.ClientSize = new System.Drawing.Size(1924, 788);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -645,8 +664,6 @@
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietChamCong)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataChamCong)).EndInit();
@@ -681,8 +698,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtMaChamCong;
         private GUI_COMPONENT.ButtonRounded btnChamCong;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvChiTietChamCong;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.DataGridView dataChamCong;
