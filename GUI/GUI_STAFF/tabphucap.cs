@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,15 +42,38 @@ namespace GUI.GUI_STAFF
                     chucvu = "Phục vụ";
                 else
                     chucvu = "Bảo vệ";
-                var loaiphucap = dt.Rows[i][1].ToString();
-                var sotien = dt.Rows[i][2].ToString();
+                var loaiphucap = dt.Rows[i][3].ToString();
+                var sotien = dt.Rows[i][1].ToString();
                 
-                var ngayupdate = dt.Rows[i][3].ToString();
+                var ngayupdate = dt.Rows[i][2].ToString();
                 dataNhanVien.Rows.Add(stt, chucvu,loaiphucap,sotien,ngayupdate);
                 stt++;//*****
             }
             dataNhanVien.ClearSelection();
 
         }
+
+        public void dataNhanVien_Selection(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataNhanVien.SelectedRows.Count; i++)
+            {
+                string cv = dataNhanVien.SelectedRows[i].Cells[1].Value.ToString();
+                string loaiphucap = dataNhanVien.SelectedRows[i].Cells[2].Value.ToString();
+                string sotien = dataNhanVien.SelectedRows[i].Cells[3].Value.ToString();
+                string ngayupdate = dataNhanVien.SelectedRows[i].Cells[4].Value.ToString();
+                var ngayhieuluc = DateTime.ParseExact(ngayupdate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                
+
+                // Gán vào các control
+                txtchucvu.Text = cv;
+                txtloaiphucap.Text = loaiphucap;
+                txtmucphucap.Text = sotien;
+
+                
+                dtphieuluc.Value = ngayhieuluc;
+            }
+        }
+
     }
 }

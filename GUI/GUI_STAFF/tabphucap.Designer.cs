@@ -39,13 +39,13 @@ namespace GUI.GUI_STAFF
             this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
             this.panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRounded1 = new GUI.GUI_COMPONENT.ButtonRounded();
-            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.dtphieuluc = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtmucphucap = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtloaiphucap = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.txtchucvu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -125,13 +125,13 @@ namespace GUI.GUI_STAFF
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.Controls.Add(this.buttonRounded1, 1, 4);
-            this.panel3.Controls.Add(this.dtpNgayVaoLam, 1, 3);
+            this.panel3.Controls.Add(this.dtphieuluc, 1, 3);
             this.panel3.Controls.Add(this.label9, 0, 3);
-            this.panel3.Controls.Add(this.textBox2, 1, 2);
+            this.panel3.Controls.Add(this.txtmucphucap, 1, 2);
             this.panel3.Controls.Add(this.label8, 0, 2);
-            this.panel3.Controls.Add(this.textBox1, 1, 1);
+            this.panel3.Controls.Add(this.txtloaiphucap, 1, 1);
             this.panel3.Controls.Add(this.label5, 0, 1);
-            this.panel3.Controls.Add(this.txtTenNV, 1, 0);
+            this.panel3.Controls.Add(this.txtchucvu, 1, 0);
             this.panel3.Controls.Add(this.label4, 0, 0);
             this.panel3.Location = new System.Drawing.Point(4, 49);
             this.panel3.Name = "panel3";
@@ -165,16 +165,16 @@ namespace GUI.GUI_STAFF
             this.buttonRounded1.Text = "Lưu trạng thái";
             this.buttonRounded1.UseVisualStyleBackColor = false;
             // 
-            // dtpNgayVaoLam
+            // dtphieuluc
             // 
-            this.dtpNgayVaoLam.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpNgayVaoLam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(185, 239);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(179, 23);
-            this.dtpNgayVaoLam.TabIndex = 8;
+            this.dtphieuluc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtphieuluc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtphieuluc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtphieuluc.Location = new System.Drawing.Point(185, 239);
+            this.dtphieuluc.Margin = new System.Windows.Forms.Padding(2);
+            this.dtphieuluc.Name = "dtphieuluc";
+            this.dtphieuluc.Size = new System.Drawing.Size(179, 23);
+            this.dtphieuluc.TabIndex = 8;
             // 
             // label9
             // 
@@ -188,15 +188,15 @@ namespace GUI.GUI_STAFF
             this.label9.Text = "Hiệu lực";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // txtmucphucap
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(185, 160);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 23);
-            this.textBox2.TabIndex = 6;
+            this.txtmucphucap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtmucphucap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmucphucap.Location = new System.Drawing.Point(185, 160);
+            this.txtmucphucap.Margin = new System.Windows.Forms.Padding(2);
+            this.txtmucphucap.Name = "txtmucphucap";
+            this.txtmucphucap.Size = new System.Drawing.Size(179, 23);
+            this.txtmucphucap.TabIndex = 6;
             // 
             // label8
             // 
@@ -210,15 +210,15 @@ namespace GUI.GUI_STAFF
             this.label8.Text = "Mức phụ cấp";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // txtloaiphucap
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(185, 81);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 23);
-            this.textBox1.TabIndex = 4;
+            this.txtloaiphucap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtloaiphucap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtloaiphucap.Location = new System.Drawing.Point(185, 81);
+            this.txtloaiphucap.Margin = new System.Windows.Forms.Padding(2);
+            this.txtloaiphucap.Name = "txtloaiphucap";
+            this.txtloaiphucap.Size = new System.Drawing.Size(179, 23);
+            this.txtloaiphucap.TabIndex = 4;
             // 
             // label5
             // 
@@ -232,15 +232,15 @@ namespace GUI.GUI_STAFF
             this.label5.Text = "Loại phụ cấp";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenNV
+            // txtchucvu
             // 
-            this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(185, 2);
-            this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(179, 23);
-            this.txtTenNV.TabIndex = 2;
+            this.txtchucvu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtchucvu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtchucvu.Location = new System.Drawing.Point(185, 2);
+            this.txtchucvu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtchucvu.Name = "txtchucvu";
+            this.txtchucvu.Size = new System.Drawing.Size(179, 23);
+            this.txtchucvu.TabIndex = 2;
             // 
             // label4
             // 
@@ -415,6 +415,7 @@ namespace GUI.GUI_STAFF
             this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataNhanVien.Size = new System.Drawing.Size(700, 346);
             this.dataNhanVien.TabIndex = 15;
+            this.dataNhanVien.SelectionChanged += new System.EventHandler(this.dataNhanVien_Selection);
             // 
             // STT
             // 
@@ -534,13 +535,13 @@ namespace GUI.GUI_STAFF
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataNhanVien;
         private System.Windows.Forms.TableLayoutPanel panel3;
-        private DateTimePicker dtpNgayVaoLam;
+        private DateTimePicker dtphieuluc;
         private Label label9;
-        private TextBox textBox2;
+        private TextBox txtmucphucap;
         private Label label8;
-        private TextBox textBox1;
+        private TextBox txtloaiphucap;
         private Label label5;
-        private TextBox txtTenNV;
+        private TextBox txtchucvu;
         private Label label4;
         private GUI_COMPONENT.ButtonRounded buttonRounded1;
         private DataGridViewTextBoxColumn STT;
