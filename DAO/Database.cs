@@ -11,20 +11,23 @@ namespace DAO
 {
     public class Database
     {
+       
         SqlConnection conn;
         SqlDataAdapter da;
         DataSet ds;
-        public string serverName = "HOANG\\MSSQLSERVERHOANG";
+        public string serverName = "127.0.0.1";
         public string dbName = "QLKS_DN";
         public string userName = "sa";
-        public string password = "";
+        public string password = "123456";
         private string connectionString;
 
 
-        public Database()
+       public Database()
         {
-            connectionString = $"Server={serverName}; Database={dbName}; Integrated Security=True; TrustServerCertificate=True;";
-            conn = new SqlConnection(connectionString);
+            // Chuỗi kết nối SQL Server Local với thông tin đã cung cấp
+            string stringConnect = $"Server={serverName}; Database={dbName}; User Id={userName}; Password={password}; TrustServerCertificate=True;";
+
+            conn = new SqlConnection(stringConnect);
         }
 
         public string GetConnectionString()
