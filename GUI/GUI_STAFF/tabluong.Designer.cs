@@ -36,6 +36,10 @@
             this.panelRounded1 = new GUI.GUI_COMPONENT.PanelRounded();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataNhanVien = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HIEULUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -54,10 +58,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HIEULUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -174,6 +174,44 @@
             this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataNhanVien.Size = new System.Drawing.Size(700, 411);
             this.dataNhanVien.TabIndex = 15;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle2;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 80;
+            // 
+            // CHUCVU
+            // 
+            this.CHUCVU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CHUCVU.HeaderText = "CHỨC VỤ";
+            this.CHUCVU.MinimumWidth = 6;
+            this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
+            this.CHUCVU.Width = 120;
+            // 
+            // SOTIEN
+            // 
+            this.SOTIEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SOTIEN.HeaderText = "SỐ TIỀN";
+            this.SOTIEN.MinimumWidth = 6;
+            this.SOTIEN.Name = "SOTIEN";
+            this.SOTIEN.ReadOnly = true;
+            this.SOTIEN.Width = 120;
+            // 
+            // HIEULUC
+            // 
+            this.HIEULUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.HIEULUC.HeaderText = "HIỆU LỰC";
+            this.HIEULUC.MinimumWidth = 6;
+            this.HIEULUC.Name = "HIEULUC";
+            this.HIEULUC.ReadOnly = true;
+            this.HIEULUC.Width = 120;
             // 
             // panel4
             // 
@@ -405,44 +443,6 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "CHỈNH SỬA PHỤ CẤP";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.STT.DefaultCellStyle = dataGridViewCellStyle2;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 80;
-            // 
-            // CHUCVU
-            // 
-            this.CHUCVU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CHUCVU.HeaderText = "CHỨC VỤ";
-            this.CHUCVU.MinimumWidth = 6;
-            this.CHUCVU.Name = "CHUCVU";
-            this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 120;
-            // 
-            // SOTIEN
-            // 
-            this.SOTIEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.SOTIEN.HeaderText = "SỐ TIỀN";
-            this.SOTIEN.MinimumWidth = 6;
-            this.SOTIEN.Name = "SOTIEN";
-            this.SOTIEN.ReadOnly = true;
-            this.SOTIEN.Width = 120;
-            // 
-            // HIEULUC
-            // 
-            this.HIEULUC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.HIEULUC.HeaderText = "HIỆU LỰC";
-            this.HIEULUC.MinimumWidth = 6;
-            this.HIEULUC.Name = "HIEULUC";
-            this.HIEULUC.ReadOnly = true;
-            this.HIEULUC.Width = 120;
             // 
             // tabluong
             // 

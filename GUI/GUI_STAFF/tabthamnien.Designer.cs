@@ -32,13 +32,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataNhanVien = new System.Windows.Forms.DataGridView();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panelRounded1 = new GUI.GUI_COMPONENT.PanelRounded();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelRounded1 = new GUI.GUI_COMPONENT.PanelRounded();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataNhanVien = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
             this.panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRounded1 = new GUI.GUI_COMPONENT.ButtonRounded();
@@ -52,135 +56,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATHAMNIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SONAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HESO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HIEULUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panelRounded1.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelRounded1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panelRounded2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.ForestGreen;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(473, 31);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "DANH SÁCH THÂM NIÊN";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dataNhanVien
-            // 
-            this.dataNhanVien.AllowUserToAddRows = false;
-            this.dataNhanVien.AllowUserToDeleteRows = false;
-            this.dataNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.dataNhanVien.BackgroundColor = System.Drawing.Color.White;
-            this.dataNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dataNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.CHUCVU,
-            this.SONAM,
-            this.HESO,
-            this.HIEULUC});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataNhanVien.EnableHeadersVisualStyles = false;
-            this.dataNhanVien.Location = new System.Drawing.Point(-43, 0);
-            this.dataNhanVien.Margin = new System.Windows.Forms.Padding(50, 5, 50, 20);
-            this.dataNhanVien.Name = "dataNhanVien";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataNhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataNhanVien.RowHeadersVisible = false;
-            this.dataNhanVien.RowHeadersWidth = 51;
-            this.dataNhanVien.RowTemplate.Height = 35;
-            this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataNhanVien.Size = new System.Drawing.Size(559, 346);
-            this.dataNhanVien.TabIndex = 15;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.dataNhanVien);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(4, 49);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
-            this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.panel6.Size = new System.Drawing.Size(473, 346);
-            this.panel6.TabIndex = 2;
-            // 
-            // panelRounded1
-            // 
-            this.panelRounded1.BackColor = System.Drawing.Color.White;
-            this.panelRounded1.BorderColor = System.Drawing.Color.White;
-            this.panelRounded1.BorderFocusColor = System.Drawing.Color.White;
-            this.panelRounded1.BorderRadius = 10;
-            this.panelRounded1.BorderSize = 2;
-            this.panelRounded1.Controls.Add(this.panel6);
-            this.panelRounded1.Controls.Add(this.panel4);
-            this.panelRounded1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRounded1.Location = new System.Drawing.Point(0, 8);
-            this.panelRounded1.Margin = new System.Windows.Forms.Padding(2);
-            this.panelRounded1.Name = "panelRounded1";
-            this.panelRounded1.Padding = new System.Windows.Forms.Padding(4);
-            this.panelRounded1.Size = new System.Drawing.Size(481, 399);
-            this.panelRounded1.TabIndex = 3;
-            this.panelRounded1.UnderlinedStyle = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(4, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(473, 45);
-            this.panel4.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -212,6 +106,160 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(312, 399);
             this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 27);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(326, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Vui lòng bấm vào bảng danh sách phụ cấp để chỉnh sửa";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 43);
+            this.panel1.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(800, 450);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "QUẢN LÝ PHỤ CẤP";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(800, 450);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "CHỈNH SỬA PHỤ CẤP";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelRounded1
+            // 
+            this.panelRounded1.BackColor = System.Drawing.Color.White;
+            this.panelRounded1.BorderColor = System.Drawing.Color.White;
+            this.panelRounded1.BorderFocusColor = System.Drawing.Color.White;
+            this.panelRounded1.BorderRadius = 10;
+            this.panelRounded1.BorderSize = 2;
+            this.panelRounded1.Controls.Add(this.panel6);
+            this.panelRounded1.Controls.Add(this.panel4);
+            this.panelRounded1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRounded1.Location = new System.Drawing.Point(0, 8);
+            this.panelRounded1.Margin = new System.Windows.Forms.Padding(2);
+            this.panelRounded1.Name = "panelRounded1";
+            this.panelRounded1.Padding = new System.Windows.Forms.Padding(4);
+            this.panelRounded1.Size = new System.Drawing.Size(481, 399);
+            this.panelRounded1.TabIndex = 3;
+            this.panelRounded1.UnderlinedStyle = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataNhanVien);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(4, 49);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Name = "panel6";
+            this.panel6.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.panel6.Size = new System.Drawing.Size(473, 346);
+            this.panel6.TabIndex = 2;
+            // 
+            // dataNhanVien
+            // 
+            this.dataNhanVien.AllowUserToAddRows = false;
+            this.dataNhanVien.AllowUserToDeleteRows = false;
+            this.dataNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataNhanVien.BackgroundColor = System.Drawing.Color.White;
+            this.dataNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.MATHAMNIEN,
+            this.SONAM,
+            this.HESO,
+            this.HIEULUC});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataNhanVien.EnableHeadersVisualStyles = false;
+            this.dataNhanVien.Location = new System.Drawing.Point(-43, 0);
+            this.dataNhanVien.Margin = new System.Windows.Forms.Padding(50, 5, 50, 20);
+            this.dataNhanVien.Name = "dataNhanVien";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataNhanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataNhanVien.RowHeadersVisible = false;
+            this.dataNhanVien.RowHeadersWidth = 51;
+            this.dataNhanVien.RowTemplate.Height = 35;
+            this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataNhanVien.Size = new System.Drawing.Size(559, 346);
+            this.dataNhanVien.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(473, 45);
+            this.panel4.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.ForestGreen;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(473, 31);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "DANH SÁCH THÂM NIÊN";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelRounded2
             // 
@@ -363,7 +411,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 32);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Chức vụ";
+            this.label4.Text = "Mã thâm niên";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
@@ -390,54 +438,6 @@
             this.label1.Text = "CHỈNH SỬA ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 27);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Vui lòng bấm vào bảng danh sách phụ cấp để chỉnh sửa";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 43);
-            this.panel1.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(800, 450);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "QUẢN LÝ PHỤ CẤP";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(800, 450);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "CHỈNH SỬA PHỤ CẤP";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // STT
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -449,14 +449,14 @@
             this.STT.ReadOnly = true;
             this.STT.Width = 80;
             // 
-            // CHUCVU
+            // MATHAMNIEN
             // 
-            this.CHUCVU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CHUCVU.HeaderText = "CHỨC VỤ";
-            this.CHUCVU.MinimumWidth = 6;
-            this.CHUCVU.Name = "CHUCVU";
-            this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 120;
+            this.MATHAMNIEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MATHAMNIEN.HeaderText = "MÃ THÂM NIÊN";
+            this.MATHAMNIEN.MinimumWidth = 6;
+            this.MATHAMNIEN.Name = "MATHAMNIEN";
+            this.MATHAMNIEN.ReadOnly = true;
+            this.MATHAMNIEN.Width = 150;
             // 
             // SONAM
             // 
@@ -495,21 +495,21 @@
             this.Controls.Add(this.label6);
             this.Name = "tabthamnien";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panelRounded1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelRounded1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panelRounded2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -541,7 +541,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CHUCVU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATHAMNIEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn SONAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn HESO;
         private System.Windows.Forms.DataGridViewTextBoxColumn HIEULUC;

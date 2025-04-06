@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-    public class ThamnienBUS
+    public class BangluongBUS
     {
         Database db;
 
 
 
-        public ThamnienBUS()
+        public BangluongBUS()
         {
             db = new Database();
         }
 
-        public DataTable getthamnien()
+        public DataTable getbangluong()
         {
             string query = @"
             SELECT *
-            from TANGLUONG";
+            from  BANGLUONG";
 
             DataTable dt = db.getList(query);
             return dt;
