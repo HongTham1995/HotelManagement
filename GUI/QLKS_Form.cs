@@ -55,7 +55,7 @@ namespace GUI
             if (!menuHRMExpand)
             {
                 pnHRM.Height += 10;
-                if (pnHRM.Height >= 150) // Đặt chiều cao đủ để chứa các nút con
+                if (pnHRM.Height >= 200) // Đặt chiều cao đủ để chứa các nút con
                 {
                     timerHRMTransition.Stop();
                     menuHRMExpand = true;
@@ -120,6 +120,7 @@ namespace GUI
                     btnHRM.Width = pnHRM.Width - 12;
                     btn_Staff.Width = pn_Staff.Width - 12;
                     btnTimekeeping.Width = pnTimekeeping.Width - 12;
+                    btningr_salary.Width=pningr_salary.Width -12;
                     btnCustomer.Width = pnCustomer.Width - 12;
                     btnBooking.Width = pnBooking.Width - 12;
                     btnBookingNew.Width = pnBooking.Width - 12;
@@ -152,6 +153,7 @@ namespace GUI
                     btnHRM.Width = pnHRM.Width - 12;
                     btn_Staff.Width = pn_Staff.Width - 12;
                     btnTimekeeping.Width = pnTimekeeping.Width - 12;
+                    btningr_salary.Width=pningr_salary.Width -12 ;
                     btnCustomer.Width = pnCustomer.Width - 12;
                     btnBooking.Width = pnBooking.Width - 12;
                     btnBookingNew.Width = pnBooking.Width - 12;
@@ -173,6 +175,7 @@ namespace GUI
                 btn_Staff.Text = "Quản lý nhân viên";
                 btnTimekeeping.Text = "Chấm công";
                 btnSalary.Text = "Lương";
+                btningr_salary.Text = "Thành phần lương";
                 btnCustomer.Text = "        Quản lý khách hàng";
                 btnRole.Text = "        Quản lý phân quyền";
                 btnBooking.Text = "        Quản lý đặt phòng";
@@ -193,6 +196,7 @@ namespace GUI
                 btn_Staff.Text = "";
                 btnTimekeeping.Text = "";
                 btnSalary.Text = "";
+                btningr_salary.Text= "";
                 btnCustomer.Text = "";
                 btnRole.Text = "";
                 btnBooking.Text = "";
@@ -271,6 +275,8 @@ namespace GUI
             btnTimekeeping.ForeColor = Color.Black;
             btnSalary.BackColor = Color.WhiteSmoke;
             btnSalary.ForeColor = Color.Black;
+            btningr_salary.BackColor = Color.WhiteSmoke;
+            btningr_salary.ForeColor = Color.Black;
         }
 
         private void btnService_Click(object sender, EventArgs e)
@@ -464,5 +470,17 @@ namespace GUI
             home.Show();
         }
 
+        private void btningr_salary_Click(object sender, EventArgs e)
+        {
+            pnContent.Controls.Clear();
+            SetColorBackground();
+            btningr_salary.BackColor = Color.Gray;
+            btningr_salary.ForeColor = Color.White;
+            ingr_salary home = new ingr_salary();
+            home.TopLevel = false;
+            pnContent.Controls.Add(home);
+            home.Dock = DockStyle.Fill;
+            home.Show();
+        }
     }
 }
