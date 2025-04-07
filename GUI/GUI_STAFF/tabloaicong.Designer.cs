@@ -47,13 +47,13 @@
             this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
             this.panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRounded1 = new GUI.GUI_COMPONENT.ButtonRounded();
-            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.dtphieuluc = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textheso = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.texttenLC = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.txtmaLC = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             this.dataNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dataNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -142,6 +142,8 @@
             this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataNhanVien.Size = new System.Drawing.Size(900, 346);
             this.dataNhanVien.TabIndex = 15;
+            this.dataNhanVien.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataNhanVien_RowPrePaint);
+            this.dataNhanVien.SelectionChanged += new System.EventHandler(this.dataNhanVien_Selection);
             // 
             // STT
             // 
@@ -280,13 +282,13 @@
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.Controls.Add(this.buttonRounded1, 1, 4);
-            this.panel3.Controls.Add(this.dtpNgayVaoLam, 1, 3);
+            this.panel3.Controls.Add(this.dtphieuluc, 1, 3);
             this.panel3.Controls.Add(this.label9, 0, 3);
-            this.panel3.Controls.Add(this.textBox2, 1, 2);
+            this.panel3.Controls.Add(this.textheso, 1, 2);
             this.panel3.Controls.Add(this.label8, 0, 2);
-            this.panel3.Controls.Add(this.textBox1, 1, 1);
+            this.panel3.Controls.Add(this.texttenLC, 1, 1);
             this.panel3.Controls.Add(this.label5, 0, 1);
-            this.panel3.Controls.Add(this.txtTenNV, 1, 0);
+            this.panel3.Controls.Add(this.txtmaLC, 1, 0);
             this.panel3.Controls.Add(this.label4, 0, 0);
             this.panel3.Location = new System.Drawing.Point(4, 49);
             this.panel3.Name = "panel3";
@@ -320,16 +322,16 @@
             this.buttonRounded1.Text = "Lưu trạng thái";
             this.buttonRounded1.UseVisualStyleBackColor = false;
             // 
-            // dtpNgayVaoLam
+            // dtphieuluc
             // 
-            this.dtpNgayVaoLam.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpNgayVaoLam.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(185, 239);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(179, 23);
-            this.dtpNgayVaoLam.TabIndex = 8;
+            this.dtphieuluc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtphieuluc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtphieuluc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtphieuluc.Location = new System.Drawing.Point(185, 239);
+            this.dtphieuluc.Margin = new System.Windows.Forms.Padding(2);
+            this.dtphieuluc.Name = "dtphieuluc";
+            this.dtphieuluc.Size = new System.Drawing.Size(179, 23);
+            this.dtphieuluc.TabIndex = 8;
             // 
             // label9
             // 
@@ -343,15 +345,15 @@
             this.label9.Text = "Hiệu lực";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox2
+            // textheso
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(185, 160);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 23);
-            this.textBox2.TabIndex = 6;
+            this.textheso.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textheso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textheso.Location = new System.Drawing.Point(185, 160);
+            this.textheso.Margin = new System.Windows.Forms.Padding(2);
+            this.textheso.Name = "textheso";
+            this.textheso.Size = new System.Drawing.Size(179, 23);
+            this.textheso.TabIndex = 6;
             // 
             // label8
             // 
@@ -365,15 +367,15 @@
             this.label8.Text = "Hệ số";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // texttenLC
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(185, 81);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 23);
-            this.textBox1.TabIndex = 4;
+            this.texttenLC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.texttenLC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texttenLC.Location = new System.Drawing.Point(185, 81);
+            this.texttenLC.Margin = new System.Windows.Forms.Padding(2);
+            this.texttenLC.Name = "texttenLC";
+            this.texttenLC.Size = new System.Drawing.Size(179, 23);
+            this.texttenLC.TabIndex = 4;
             // 
             // label5
             // 
@@ -387,15 +389,15 @@
             this.label5.Text = "Tên LC";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenNV
+            // txtmaLC
             // 
-            this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(185, 2);
-            this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(179, 23);
-            this.txtTenNV.TabIndex = 2;
+            this.txtmaLC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtmaLC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmaLC.Location = new System.Drawing.Point(185, 2);
+            this.txtmaLC.Margin = new System.Windows.Forms.Padding(2);
+            this.txtmaLC.Name = "txtmaLC";
+            this.txtmaLC.Size = new System.Drawing.Size(179, 23);
+            this.txtmaLC.TabIndex = 2;
             // 
             // label4
             // 
@@ -524,13 +526,13 @@
         private GUI_COMPONENT.PanelRounded panelRounded2;
         private System.Windows.Forms.TableLayoutPanel panel3;
         private GUI_COMPONENT.ButtonRounded buttonRounded1;
-        private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
+        private System.Windows.Forms.DateTimePicker dtphieuluc;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textheso;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox texttenLC;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTenNV;
+        private System.Windows.Forms.TextBox txtmaLC;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;

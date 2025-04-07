@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,39 @@ namespace GUI.GUI_STAFF
             }
             dataNhanVien.ClearSelection();
 
+        }
+
+        public void dataNhanVien_Selection(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataNhanVien.SelectedRows.Count; i++)
+            {
+                string cv = dataNhanVien.SelectedRows[i].Cells[1].Value.ToString();
+                string sotien = dataNhanVien.SelectedRows[i].Cells[2].Value.ToString();
+                string ngayupdate = dataNhanVien.SelectedRows[i].Cells[3].Value.ToString();
+                var ngayhieuluc = DateTime.ParseExact(ngayupdate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                dtphieuluc.Format = DateTimePickerFormat.Custom;
+                dtphieuluc.CustomFormat = "dd/MM/yyyy";
+
+                // Gán vào các control
+                txtchucvu.Text = cv;              
+                textsotien.Text = sotien;
+                dtphieuluc.Value = ngayhieuluc;
+            }
+        }
+
+        private void dataNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            for (int i = 0; i < dataNhanVien.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dataNhanVien.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(249, 249, 249);
+                }
+                else
+                {
+                    dataNhanVien.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+            }
         }
     }
 }

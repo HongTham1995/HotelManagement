@@ -368,9 +368,10 @@ namespace GUI.GUI_STAFF
             this.dataNhanVien.AllowUserToAddRows = false;
             this.dataNhanVien.AllowUserToDeleteRows = false;
             this.dataNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataNhanVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dataNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -398,7 +399,7 @@ namespace GUI.GUI_STAFF
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataNhanVien.EnableHeadersVisualStyles = false;
-            this.dataNhanVien.Location = new System.Drawing.Point(4, 0);
+            this.dataNhanVien.Location = new System.Drawing.Point(-30, 0);
             this.dataNhanVien.Margin = new System.Windows.Forms.Padding(50, 5, 50, 20);
             this.dataNhanVien.Name = "dataNhanVien";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -415,6 +416,7 @@ namespace GUI.GUI_STAFF
             this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataNhanVien.Size = new System.Drawing.Size(700, 346);
             this.dataNhanVien.TabIndex = 15;
+            this.dataNhanVien.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataNhanVien_RowPrePaint);
             this.dataNhanVien.SelectionChanged += new System.EventHandler(this.dataNhanVien_Selection);
             // 
             // STT

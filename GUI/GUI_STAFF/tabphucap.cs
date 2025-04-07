@@ -75,5 +75,20 @@ namespace GUI.GUI_STAFF
             }
         }
 
+        private void dataNhanVien_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            for (int i = 0; i < dataNhanVien.Rows.Count; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    dataNhanVien.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(249, 249, 249);
+                }
+                else
+                {
+                    dataNhanVien.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                }
+            }
+        }
+
     }
 }

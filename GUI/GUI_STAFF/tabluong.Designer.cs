@@ -46,11 +46,11 @@
             this.panelRounded2 = new GUI.GUI_COMPONENT.PanelRounded();
             this.panel3 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRounded4 = new GUI.GUI_COMPONENT.ButtonRounded();
-            this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
+            this.dtphieuluc = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textsotien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.txtchucvu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
             this.dataNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataNhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dataNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataNhanVien.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataNhanVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -174,6 +174,8 @@
             this.dataNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataNhanVien.Size = new System.Drawing.Size(700, 411);
             this.dataNhanVien.TabIndex = 15;
+            this.dataNhanVien.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataNhanVien_RowPrePaint);
+            this.dataNhanVien.SelectionChanged += new System.EventHandler(this.dataNhanVien_Selection);
             // 
             // STT
             // 
@@ -271,11 +273,11 @@
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.panel3.Controls.Add(this.buttonRounded4, 1, 4);
-            this.panel3.Controls.Add(this.dtpNgayVaoLam, 1, 2);
+            this.panel3.Controls.Add(this.dtphieuluc, 1, 2);
             this.panel3.Controls.Add(this.label9, 0, 2);
-            this.panel3.Controls.Add(this.textBox1, 1, 1);
+            this.panel3.Controls.Add(this.textsotien, 1, 1);
             this.panel3.Controls.Add(this.label5, 0, 1);
-            this.panel3.Controls.Add(this.txtTenNV, 1, 0);
+            this.panel3.Controls.Add(this.txtchucvu, 1, 0);
             this.panel3.Controls.Add(this.label4, 0, 0);
             this.panel3.Location = new System.Drawing.Point(4, 49);
             this.panel3.Name = "panel3";
@@ -309,12 +311,12 @@
             this.buttonRounded4.Text = "Lưu trạng thái";
             this.buttonRounded4.UseVisualStyleBackColor = false;
             // 
-            // dtpNgayVaoLam
+            // dtphieuluc
             // 
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(188, 173);
-            this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
-            this.dtpNgayVaoLam.Size = new System.Drawing.Size(179, 20);
-            this.dtpNgayVaoLam.TabIndex = 13;
+            this.dtphieuluc.Location = new System.Drawing.Point(188, 173);
+            this.dtphieuluc.Name = "dtphieuluc";
+            this.dtphieuluc.Size = new System.Drawing.Size(179, 20);
+            this.dtphieuluc.TabIndex = 13;
             // 
             // label9
             // 
@@ -328,15 +330,15 @@
             this.label9.Text = "Hiệu lực";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // textsotien
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(187, 87);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 23);
-            this.textBox1.TabIndex = 4;
+            this.textsotien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textsotien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textsotien.Location = new System.Drawing.Point(187, 87);
+            this.textsotien.Margin = new System.Windows.Forms.Padding(2);
+            this.textsotien.Name = "textsotien";
+            this.textsotien.Size = new System.Drawing.Size(181, 23);
+            this.textsotien.TabIndex = 4;
             // 
             // label5
             // 
@@ -350,15 +352,15 @@
             this.label5.Text = "Số tiền";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtTenNV
+            // txtchucvu
             // 
-            this.txtTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTenNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNV.Location = new System.Drawing.Point(187, 2);
-            this.txtTenNV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(181, 23);
-            this.txtTenNV.TabIndex = 2;
+            this.txtchucvu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtchucvu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtchucvu.Location = new System.Drawing.Point(187, 2);
+            this.txtchucvu.Margin = new System.Windows.Forms.Padding(2);
+            this.txtchucvu.Name = "txtchucvu";
+            this.txtchucvu.Size = new System.Drawing.Size(181, 23);
+            this.txtchucvu.TabIndex = 2;
             // 
             // label4
             // 
@@ -479,9 +481,9 @@
         private System.Windows.Forms.Label label7;
         
         private System.Windows.Forms.TableLayoutPanel panel3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textsotien;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTenNV;
+        private System.Windows.Forms.TextBox txtchucvu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataNhanVien;
         private System.Windows.Forms.Panel panel6;
@@ -496,7 +498,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpNgayVaoLam;
+        private System.Windows.Forms.DateTimePicker dtphieuluc;
         private System.Windows.Forms.Label label9;
         private GUI_COMPONENT.ButtonRounded buttonRounded4;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
